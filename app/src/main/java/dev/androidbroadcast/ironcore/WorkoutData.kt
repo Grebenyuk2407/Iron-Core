@@ -21,8 +21,7 @@ data class Day(
 
 data class Exercise(
     val name: String,
-    val sets: Int,
     val reps: Int?,
     val sec: Int?,
-    val equipment: String?
+    val sets: Int
 )
