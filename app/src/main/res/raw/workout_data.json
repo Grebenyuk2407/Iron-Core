@@ -225,7 +225,7 @@
             {
               "day": 2,
               "exercises": [
-                { "name": "Wide-grip push-ups", "sets": 4, "reps": 12, "equipment": "Wall" },
+                { "name": "Wide-grip push-ups", "sets": 4, "reps": 12},
                 { "name": "Ring push-ups with deep dip", "sets": 4, "reps": 10},
                 { "name": "Single-leg jump squats", "sets": 4, "reps": 8}
               ]
@@ -233,7 +233,7 @@
             {
               "day": 3,
               "exercises": [
-                { "name": "Single-leg jump squats", "sets": 4, "reps": 6, "equipment": "Wall" },
+                { "name": "Single-leg jump squats", "sets": 4, "reps": 6},
                 { "name": "Hanging leg raises with a hold", "sets": 3, "reps": 15},
                 { "name": "Plank with alternating arms and legs", "sets": 3, "sec": 60}
               ]
