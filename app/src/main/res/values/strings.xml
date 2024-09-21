@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">IronCore</string>
+    <string-array name="difficulty_levels">
+        <item>beginner</item>
+        <item>intermediate</item>
+        <item>advanced</item>
+    </string-array>
 </resources>
