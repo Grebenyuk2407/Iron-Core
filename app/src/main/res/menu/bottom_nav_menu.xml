@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/baseline_home_24"
+        android:title="Workout" />
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/baseline_account_box_24"
+        android:title="Profile" />
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/baseline_app_settings_alt_24"
+        android:title="Settings" />
+</menu>

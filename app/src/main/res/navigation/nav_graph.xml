@@ -17,12 +17,19 @@
         android:id="@+id/fragmentRegistration"
         android:name="dev.androidbroadcast.ironcore.FragmentRegistration"
         android:label="Registration">
-        <action
-            android:id="@+id/action_registration_to_difficultySelection"
-            app:destination="@id/fragmentDifficultySelection" />
     </fragment>
+
+
     <fragment
-        android:id="@+id/fragmentDifficultySelection"
-        android:name="dev.androidbroadcast.ironcore.FragmentDifficultySelection"
-        android:label="Difficulty Selection" />
+        android:id="@+id/nav_settings"
+        android:name="dev.androidbroadcast.ironcore.SettingsFragment"
+        android:label="Settings" />
+    <fragment
+        android:id="@+id/nav_workouts"
+        android:name="dev.androidbroadcast.ironcore.WorkoutsFragment"
+        android:label="Workouts" />
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="dev.androidbroadcast.ironcore.ProfileFragment"
+        android:label="Profile" />
 </navigation>
