@@ -11,12 +11,18 @@
         <action
             android:id="@+id/action_login_to_registration"
             app:destination="@id/fragmentRegistration" />
+        <action
+            android:id="@+id/action_login_to_profile"
+            app:destination="@+id/nav_profile" />
     </fragment>
 
     <fragment
         android:id="@+id/fragmentRegistration"
         android:name="dev.androidbroadcast.ironcore.FragmentRegistration"
         android:label="Registration">
+        <action
+            android:id="@+id/action_registration_to_profile"
+            app:destination="@+id/nav_profile" />
     </fragment>
 
 

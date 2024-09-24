@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import dev.androidbroadcast.ironcore.databinding.FragmentLoginBinding
 
@@ -40,6 +41,7 @@ class FragmentLogin : Fragment() {
                         if (task.isSuccessful) {
                             Toast.makeText(context, "Login successful!", Toast.LENGTH_SHORT).show()
                             // Переход на другой экран
+                            findNavController().navigate(R.id.action_login_to_profile)
                         } else {
                             Toast.makeText(context, "Login failed: ${task.exception?.message}", Toast.LENGTH_LONG).show()
                         }

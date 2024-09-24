@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.gson.Gson
@@ -41,9 +42,10 @@ class FragmentRegistration : Fragment() {
             val email = binding.etEmail.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
             val difficultyLevel = getSelectedDifficultyLevel()
+            val userName = binding.etUsername.text.toString().trim()
 
-            if (email.isNotEmpty() && password.isNotEmpty() && difficultyLevel != null) {
-                registerUser(email, password, difficultyLevel)
+            if (email.isNotEmpty() && password.isNotEmpty() && userName.isNotEmpty() && difficultyLevel != null) {
+                registerUser(email, password, userName, difficultyLevel)
             } else {
                 Toast.makeText(requireContext(), "Please fill all fields", Toast.LENGTH_SHORT).show()
             }
@@ -61,7 +63,7 @@ class FragmentRegistration : Fragment() {
     }
 
     // Метод для регистрации пользователя и сохранения данных в Firestore
-    private fun registerUser(email: String, password: String, difficultyLevel: String) {
+    private fun registerUser(email: String, password: String, userName: String, difficultyLevel: String) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -69,7 +71,7 @@ class FragmentRegistration : Fragment() {
                     if (userId != null) {
                         // Загружаем программу тренировок из JSON
                         val workoutData = loadWorkoutData(requireContext(), difficultyLevel)
-                        saveUserData(userId, email, difficultyLevel, workoutData)
+                        saveUserData(userId, email, userName, difficultyLevel, workoutData)
                     }
                 } else {
                     Toast.makeText(requireContext(), "Registration failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
@@ -101,7 +103,7 @@ class FragmentRegistration : Fragment() {
 
 
     // Метод для сохранения данных пользователя в Firestore
-    private fun saveUserData(userId: String, email: String, difficultyLevel: String, workoutData: WorkoutData?) {
+    private fun saveUserData(userId: String, email: String, userName: String, difficultyLevel: String, workoutData: WorkoutData?) {
         // Преобразуем workoutData в Map
         val workoutDataMap = workoutData?.let {
             val gson = Gson()
@@ -111,6 +113,7 @@ class FragmentRegistration : Fragment() {
         val userMap = hashMapOf(
             "email" to email,
             "difficultyLevel" to difficultyLevel,
+            "username" to userName,
             "workoutProgram" to workoutDataMap // Сохраняем JSON-строку
         )
 
@@ -119,6 +122,7 @@ class FragmentRegistration : Fragment() {
             .addOnSuccessListener {
                 Toast.makeText(requireContext(), "User registered successfully", Toast.LENGTH_SHORT).show()
                 // Здесь можно сделать навигацию на следующий фрагмент
+                findNavController().navigate(R.id.action_registration_to_profile)
             }
             .addOnFailureListener { e ->
                 Toast.makeText(requireContext(), "Failed to save data: ${e.message}", Toast.LENGTH_LONG).show()
