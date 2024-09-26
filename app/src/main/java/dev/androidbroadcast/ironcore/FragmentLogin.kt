@@ -1,5 +1,7 @@
 package dev.androidbroadcast.ironcore
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +19,7 @@ class FragmentLogin : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,9 +30,15 @@ class FragmentLogin : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        super.onViewCreated(view, savedInstanceState) // Добавляем savedInstanceState
 
         auth = FirebaseAuth.getInstance()
+        sharedPreferences = requireActivity().getSharedPreferences("login_prefs", Context.MODE_PRIVATE)
+
+        // Проверка статуса "Запомнить меня" при запуске
+        if (sharedPreferences.getBoolean("rememberMe", false)) {
+            findNavController().navigate(R.id.action_login_to_profile)
+        }
 
         binding.btnLogin.setOnClickListener {
             val email = binding.etEmailLogin.text.toString()
@@ -39,8 +48,13 @@ class FragmentLogin : Fragment() {
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
+                            // Если логин успешный и галочка "Запомнить меня" выбрана
+                            if (binding.chkRememberMe.isChecked) {
+                                saveLoginState(true) // Сохраняем статус логина
+                            } else {
+                                saveLoginState(false) // Сбрасываем статус логина
+                            }
                             Toast.makeText(context, "Login successful!", Toast.LENGTH_SHORT).show()
-                            // Переход на другой экран
                             findNavController().navigate(R.id.action_login_to_profile)
                         } else {
                             Toast.makeText(context, "Login failed: ${task.exception?.message}", Toast.LENGTH_LONG).show()
@@ -52,9 +66,15 @@ class FragmentLogin : Fragment() {
         }
 
         binding.tvRegister.setOnClickListener {
-            // Переход на экран регистрации
             findNavController().navigate(R.id.action_login_to_registration)
         }
+    }
+
+
+    private fun saveLoginState(isRemembered: Boolean) {
+        val editor = sharedPreferences.edit()
+        editor.putBoolean("rememberMe", isRemembered)
+        editor.apply()
     }
 
     override fun onDestroyView() {

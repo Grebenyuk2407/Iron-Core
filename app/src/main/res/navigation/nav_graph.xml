@@ -38,4 +38,8 @@
         android:id="@+id/nav_profile"
         android:name="dev.androidbroadcast.ironcore.ProfileFragment"
         android:label="Profile" />
+
+    <action
+        android:id="@+id/action_global_to_profile"
+        app:destination="@+id/nav_profile" />
 </navigation>
