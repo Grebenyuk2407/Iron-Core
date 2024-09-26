@@ -1,13 +1,16 @@
 package dev.androidbroadcast.ironcore
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import dev.androidbroadcast.ironcore.databinding.FragmentProfileBinding
@@ -19,6 +22,7 @@ class ProfileFragment : Fragment() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +37,7 @@ class ProfileFragment : Fragment() {
 
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
+        sharedPreferences = requireActivity().getSharedPreferences("login_prefs", Context.MODE_PRIVATE)
 
         val userId = auth.currentUser?.uid
         if (userId != null) {
@@ -42,6 +47,9 @@ class ProfileFragment : Fragment() {
         // Загрузка аватарки
         binding.btnEditProfile.setOnClickListener {
             pickImageFromGallery()
+        }
+        binding.btnLogout.setOnClickListener {
+            logoutUser()
         }
     }
 
@@ -62,6 +70,22 @@ class ProfileFragment : Fragment() {
             .addOnFailureListener { exception ->
                 Toast.makeText(requireContext(), "Ошибка загрузки профиля: ${exception.message}", Toast.LENGTH_SHORT).show()
             }
+    }
+
+    private fun logoutUser() {
+        // 1. Выход из Firebase
+        auth.signOut()
+
+        // 2. Очищаем данные о сохранённом логине
+        val editor = sharedPreferences.edit()
+        editor.putBoolean("rememberMe", false)
+        editor.apply()
+
+        // 3. Навигация на экран логина
+        findNavController().navigate(R.id.action_profile_to_login)
+
+        // Вывод сообщения для пользователя
+        Toast.makeText(requireContext(), "Вы вышли из аккаунта", Toast.LENGTH_SHORT).show()
     }
 
     private fun pickImageFromGallery() {
