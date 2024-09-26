@@ -55,8 +55,8 @@ class ProfileFragment : Fragment() {
 
                     // Отображаем данные в интерфейсе
                     binding.tvUserName.text = userName
-                    binding.tvProgramLevel.text = "Current Program: $difficultyLevel"
-                    binding.tvTokenBalance.text = "Token Balance:: $tokenBalance"
+                    binding.tvProgramLevel.text = "$difficultyLevel"
+                    binding.tvTokenBalance.text = "Token Balance: $tokenBalance"
                 }
             }
             .addOnFailureListener { exception ->
