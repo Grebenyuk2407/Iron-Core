@@ -12,6 +12,7 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         // Привязка BottomNavigationView к NavController
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
-        NavigationUI.setupWithNavController(bottomNav, navController)
+        bottomNav.setupWithNavController(navController)
 
         // Если нужно, обработай навигацию по фрагментам и настроить возвращение в предыдущие экраны.
         navController.addOnDestinationChangedListener { _, destination, _ ->
