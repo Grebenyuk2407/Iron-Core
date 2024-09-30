@@ -21,7 +21,7 @@ class WorkoutsFragment : Fragment() {
     private lateinit var binding: FragmentWorkoutBinding
     private lateinit var firestore: FirebaseFirestore
     private lateinit var workoutAdapter: WorkoutAdapter
-    private var exercisesList: List<Exercise> = listOf()
+    private var dayExerciseList: List<DayExerciseItem> = listOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,7 +40,6 @@ class WorkoutsFragment : Fragment() {
         loadUserDifficultyLevel()
     }
 
-    // Метод для загрузки уровня сложности пользователя из Firestore
     private fun loadUserDifficultyLevel() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         userId?.let {
@@ -59,22 +58,30 @@ class WorkoutsFragment : Fragment() {
         }
     }
 
-    // Метод для загрузки тренировок на основе уровня сложности
     private fun loadWorkoutsForDifficulty(difficultyLevel: String) {
-        // Загружаем JSON с тренировками
         val workoutData = loadWorkoutDataFromJson()
 
-        // Получаем список всех упражнений для всех дней всех недель, соответствующих уровню сложности
-        val exercises = workoutData?.workoutLevels
+        // Получаем список всех дней и упражнений для выбранного уровня сложности
+        val days = workoutData?.workoutLevels
             ?.firstOrNull { it.level == difficultyLevel }
             ?.weeks?.flatMap { it.days }
-            ?.flatMap { it.exercises }
             ?: listOf()
 
-        setupRecyclerView(exercises)
+        val dayExerciseItems = mutableListOf<DayExerciseItem>()
+
+        days.forEachIndexed { index, day ->
+            // Добавляем заголовок "Day X"
+            dayExerciseItems.add(DayExerciseItem.DayHeader("Day ${index + 1}"))
+
+            // Добавляем упражнения для этого дня
+            day.exercises.forEach { exercise ->
+                dayExerciseItems.add(DayExerciseItem.ExerciseItem(exercise))
+            }
+        }
+
+        setupRecyclerView(dayExerciseItems)
     }
 
-    // Метод для загрузки JSON тренировок из assets или raw
     private fun loadWorkoutDataFromJson(): WorkoutData? {
         return try {
             val inputStream = requireContext().resources.openRawResource(R.raw.workout_data)
@@ -89,12 +96,12 @@ class WorkoutsFragment : Fragment() {
         }
     }
 
-    // Настройка RecyclerView для отображения списка тренировок
-    private fun setupRecyclerView(exercises: List<Exercise>) {
-        workoutAdapter = WorkoutAdapter(exercises)
+    private fun setupRecyclerView(dayExerciseItems: List<DayExerciseItem>) {
+        workoutAdapter = WorkoutAdapter(dayExerciseItems)
         binding.recyclerViewWorkouts.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = workoutAdapter
         }
     }
 }
+
