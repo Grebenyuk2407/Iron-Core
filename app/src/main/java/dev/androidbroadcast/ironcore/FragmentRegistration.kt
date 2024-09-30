@@ -34,7 +34,6 @@ class FragmentRegistration : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Инициализация Firebase Auth и Firestore
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
 
@@ -80,8 +79,7 @@ class FragmentRegistration : Fragment() {
     }
 
     // Метод для загрузки программы тренировок в зависимости от уровня сложности
-    // Метод для загрузки программы тренировок в зависимости от уровня сложности
-    private fun loadWorkoutData(context: Context, difficultyLevel: String): WorkoutData? {
+    private fun loadWorkoutData(context: Context, difficultyLevel: String): WorkoutLevel? {
         return try {
             val inputStream = context.resources.openRawResource(R.raw.workout_data)
             val reader = InputStreamReader(inputStream)
@@ -90,38 +88,49 @@ class FragmentRegistration : Fragment() {
             val workoutDataType = object : TypeToken<WorkoutData>() {}.type
             val workoutData: WorkoutData = gson.fromJson(reader, workoutDataType)
 
-            // Возвращаем весь WorkoutData, но также внутри будем выбирать WorkoutLevel
-            val selectedWorkoutLevel = workoutData.workoutLevels.firstOrNull { it.level == difficultyLevel }
-
-            // Обновляем данные уровня тренировки внутри WorkoutData (если найден уровень)
-            workoutData.copy(workoutLevels = listOfNotNull(selectedWorkoutLevel))
+            // Возвращаем уровень тренировки на основе выбранного уровня сложности
+            workoutData.workoutLevels.firstOrNull { it.level == difficultyLevel }
         } catch (e: IOException) {
             Log.e("FragmentRegistration", "Error loading workout data: ${e.message}")
             null
         }
     }
 
-
     // Метод для сохранения данных пользователя в Firestore
-    private fun saveUserData(userId: String, email: String, userName: String, difficultyLevel: String, workoutData: WorkoutData?) {
-        // Преобразуем workoutData в Map
-        val workoutDataMap = workoutData?.let {
-            val gson = Gson()
-            gson.toJson(it) // Преобразуем в JSON-строку
+    private fun saveUserData(userId: String, email: String, userName: String, difficultyLevel: String, workoutLevel: WorkoutLevel?) {
+        // Преобразуем WorkoutLevel в Map
+        val workoutMap = workoutLevel?.let {
+            val exerciseMapList = it.weeks.flatMap { week ->
+                week.days.flatMap { day ->
+                    day.exercises.map { exercise ->
+                        mapOf(
+                            "name" to exercise.name,
+                            "sets" to exercise.sets,
+                            "reps" to exercise.reps,
+                            "sec" to exercise.sec
+
+                        )
+                    }
+                }
+            }
+
+            mapOf(
+                "level" to it.level,
+                "exercises" to exerciseMapList
+            )
         }
 
         val userMap = hashMapOf(
             "email" to email,
             "difficultyLevel" to difficultyLevel,
             "username" to userName,
-            "workoutProgram" to workoutDataMap // Сохраняем JSON-строку
+            "workoutProgram" to workoutMap // Сохраняем структурированные данные
         )
 
         firestore.collection("users").document(userId)
             .set(userMap)
             .addOnSuccessListener {
                 Toast.makeText(requireContext(), "User registered successfully", Toast.LENGTH_SHORT).show()
-                // Здесь можно сделать навигацию на следующий фрагмент
                 findNavController().navigate(R.id.action_registration_to_profile)
             }
             .addOnFailureListener { e ->
@@ -129,5 +138,6 @@ class FragmentRegistration : Fragment() {
             }
     }
 }
+
 
 
