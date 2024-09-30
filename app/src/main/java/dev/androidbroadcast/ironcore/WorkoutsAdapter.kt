@@ -40,7 +40,7 @@ class WorkoutAdapter(private val items: List<DayExerciseItem>) : RecyclerView.Ad
     }
 
     override fun getItemCount(): Int {
-        return items.count()
+        return items.indices.count()
     }
 
     class DayHeaderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
