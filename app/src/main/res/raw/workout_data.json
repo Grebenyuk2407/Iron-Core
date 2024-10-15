@@ -9,25 +9,28 @@
             {
               "day": 1,
               "exercises": [
-                { "name": "Pull-ups on a bar", "sets": 3, "reps": 5},
-                { "name": "Ring rows", "sets": 3, "reps": 8},
-                { "name": "Elbow plank", "sets": 3, "sec": 20}
+                { "name": "Australian Pull Up", "sets": 3, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=bHO0A4ZF_Zg"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Push up from floor", "sets": 3, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=lVNzuIArliA"},
+                { "name": "Hanging Knee Raises", "sets": 3, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=KNzJ3GuIpB8"}
               ]
             },
             {
               "day": 2,
               "exercises": [
-                { "name": "Push-ups from the floor", "sets": 3, "reps": 10},
-                { "name": "Dips on parallel bars", "sets": 3, "reps": 8},
-                { "name": "Bodyweight squats", "sets": 3, "reps": 15}
+                { "name": "Pull-ups on a bar", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Wide Push Ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=EsIdzx1J0iA"},
+                { "name": "Hanging Side Knee Raise", "sets": 3, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=bT5pfL6ROIU"}
               ]
             },
             {
               "day": 3,
               "exercises": [
-                { "name": "Jump squats", "sets": 3, "reps": 10},
-                { "name": "Hanging leg raises on a bar", "sets": 3, "reps": 8},
-                { "name": "Plank with leg lifts", "sets": 3, "sec": 25}
+                { "name": "Commando Pull Up", "sets": 3, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Diamond Push Ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=XtU2VQVuLYs"},
+                { "name": "Hanging Knee Raises", "sets": 3, "sec": 25, "videoUrl": "https://www.youtube.com/watch?v=KNzJ3GuIpB8"}
               ]
             }
           ]
@@ -38,25 +41,28 @@
             {
               "day": 1,
               "exercises": [
-                { "name": "Pull-ups on a bar with a pause", "sets": 3, "reps": 6},
-                { "name": "Ring rows at an angle", "sets": 3, "reps": 10},
-                { "name": "Plank with leg lifts", "sets": 3, "sec": 30}
+                { "name": "Reverse Grip Pull-ups", "sets": 3, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=4q4u077Cmlw"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Pike Push Ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=XckEEwa1BPI"},
+                { "name": "Hanging Side Knee Raise", "sets": 3, "sec": 30, "videoUrl": "https://www.youtube.com/watch?v=bT5pfL6ROIU"}
               ]
             },
             {
               "day": 2,
               "exercises": [
-                { "name": "Clapping push-ups", "sets": 3, "reps": 8},
-                { "name": "Dips on parallel bars with slow lowering", "sets": 3, "reps": 8},
-                { "name": "Jump squats", "sets": 3, "reps": 12}
+                { "name": "Close grip Pull-ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2JxlabCXxAc"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Push up from floor", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=lVNzuIArliA"},
+                { "name": "Hanging Knee Raises", "sets": 3, "reps": 12, "videoUrl": "https://www.youtube.com/watch?v=KNzJ3GuIpB8"}
               ]
             },
             {
               "day": 3,
               "exercises": [
-                { "name": "Assisted pistol squats", "sets": 3, "reps": 8},
-                { "name": "Hanging leg raises on a bar", "sets": 3, "reps": 10},
-                { "name": "Plank with alternating arms", "sets": 3, "sec": 30}
+                { "name": "Australian Pull Up", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=bHO0A4ZF_Zg"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Wide Push Ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=EsIdzx1J0iA"},
+                { "name": "Hanging Side Knee Raise", "sets": 3, "sec": 30, "videoUrl": "https://www.youtube.com/watch?v=bT5pfL6ROIU"}
               ]
             }
           ]
@@ -67,25 +73,28 @@
             {
               "day": 1,
               "exercises": [
-                { "name": "Band-assisted pull-ups", "sets": 3, "reps": 10},
-                { "name": "Ring rows at an angle", "sets": 3, "reps": 12},
-                { "name": "Plank with arm and leg lifts", "sets": 3, "sec": 30}
+                { "name": "Pull-ups on a bar", "sets": 3, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Diamond Push Ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=XtU2VQVuLYs"},
+                { "name": "Hanging Knee Raises", "sets": 3, "sec": 30, "videoUrl": "https://www.youtube.com/watch?v=KNzJ3GuIpB8"}
               ]
             },
             {
               "day": 2,
               "exercises": [
-                { "name": "Dips with a pause", "sets": 3, "reps": 8},
-                { "name": "Push-ups with hands at different levels", "sets": 3, "reps": 10},
-                { "name": "Jump squats", "sets": 3, "reps": 15}
+                { "name": "Commando Pull Up", "sets": 3, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Pike Push Ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=XckEEwa1BPI"},
+                { "name": "Hanging Side Knee Raise", "sets": 3, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=bT5pfL6ROIU"}
               ]
             },
             {
               "day": 3,
               "exercises": [
-                { "name": "Assisted pistol squats", "sets": 3, "reps": 10},
-                { "name": "Hanging leg raises on rings", "sets": 3, "reps": 12},
-                { "name": "Plank with arm and leg lifts", "sets": 3, "sec": 30}
+                { "name": "Reverse Grip Pull-ups", "sets": 3, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=4q4u077Cmlw"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Push up from floor", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=lVNzuIArliA"},
+                { "name": "Hanging Knee Raises", "sets": 3, "sec": 30, "videoUrl": "https://www.youtube.com/watch?v=KNzJ3GuIpB8"}
               ]
             }
           ]
@@ -96,25 +105,28 @@
             {
               "day": 1,
               "exercises": [
-                { "name": "Pull-ups on a bar with a pause", "sets": 3, "reps": 8},
-                { "name": "Ring rows with feet elevated", "sets": 3, "reps": 10},
-                { "name": "Elbow plank with alternating legs", "sets": 3, "sec": 30}
+                { "name": "Close grip Pull-ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2JxlabCXxAc"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Wide Push Ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=EsIdzx1J0iA"},
+                { "name": "Hanging Side Knee Raise", "sets": 3, "sec": 30, "videoUrl": "https://www.youtube.com/watch?v=bT5pfL6ROIU"}
               ]
             },
             {
               "day": 2,
               "exercises": [
-                { "name": "Handstand push-ups against the wall", "sets": 3, "reps": 6},
-                { "name": "Dips on parallel bars with slow lowering", "sets": 3, "reps": 8},
-                { "name": "Jump squats with a hold", "sets": 3, "reps": 15}
+                { "name": "Australian Pull Up", "sets": 3, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=bHO0A4ZF_Zg"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Diamond Push Ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=XtU2VQVuLYs"},
+                { "name": "Hanging Knee Raises", "sets": 3, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=KNzJ3GuIpB8"}
               ]
             },
             {
               "day": 3,
               "exercises": [
-                { "name": "Single-leg jump squats", "sets": 3, "reps": 8},
-                { "name": "Controlled hanging leg raises on a bar ", "sets": 3, "reps": 12},
-                { "name": "Plank with arm and leg lifts", "sets": 3, "sec": 30}
+                { "name": "Pull-ups on a bar", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Pike Push Ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=XckEEwa1BPI"},
+                { "name": "Hanging Side Knee Raise", "sets": 3, "sec": 30, "videoUrl": "https://www.youtube.com/watch?v=bT5pfL6ROIU"}
               ]
             }
           ]
@@ -130,25 +142,25 @@
             {
               "day": 1,
               "exercises": [
-                { "name": "Pull-ups with slow descent", "sets": 4, "reps": 6},
-                { "name": "Ring rows in a horizontal position", "sets": 4, "reps": 8},
-                { "name": "Plank with arm and leg raise", "sets": 3, "sec": 40}
+                { "name": "Pull-ups with slow descent", "sets": 4, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=SyGG7p4a2-A" },
+                { "name": "French push-ups", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=6_pm4p95Bw8" },
+                { "name": "Plank with arm and leg lifts", "sets": 3, "sec": 40, "videoUrl": "https://www.youtube.com/watch?v=iWjH5xgZgyQ" }
               ]
             },
             {
               "day": 2,
               "exercises": [
-                { "name": "Dips with a pause at the bottom", "sets": 4, "reps": 10},
-                { "name": "Push-ups with elevated feet", "sets": 4, "reps": 12},
-                { "name": "Jump squats", "sets": 4, "reps": 15}
+                { "name": "Diamond Push Ups With One Leg", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=k83TuYfgqUE" },
+                { "name": "Commando Pull Up", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=GITBFhecTII" },
+                { "name": "Jump squats", "sets": 4, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=eUl1Ttx8b98" }
               ]
             },
             {
               "day": 3,
               "exercises": [
-                { "name": "Single-leg squats with support", "sets": 3, "reps": 10},
-                { "name": "Hanging leg raises with a hold at the top", "sets": 3, "reps": 10},
-                { "name": "Plank with alternating hands", "sets": 3, "sec": 40}
+                { "name": "Close grip pull-ups", "sets": 3, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=2JxlabCXxAc" },
+                { "name": "Typewriter Push Up", "sets": 3, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=LMlxLCVKFUs" },
+                { "name": "Plank with arm and leg lifts", "sets": 3, "sec": 40, "videoUrl": "https://www.youtube.com/watch?v=iWjH5xgZgyQ" }
               ]
             }
           ]
@@ -159,25 +171,25 @@
             {
               "day": 1,
               "exercises": [
-                { "name": "Pull-ups with a pause at the top", "sets": 4, "reps": 8},
-                { "name": "Ring rows with elevated feet", "sets": 4, "reps": 10},
-                { "name": "Plank with arm and leg raise", "sets": 3, "sec": 45}
+                { "name": "Pull-ups with a pause at the top", "sets": 4, "reps": 8, "videoUrl": "https://example.com/pull-ups-pause" },
+                { "name": "Wide push-ups", "sets": 4, "reps": 10, "videoUrl": "https://example.com/wide-push-ups" },
+                { "name": "Plank with arm and leg raise", "sets": 3, "sec": 45, "videoUrl": "https://example.com/plank-arm-leg" }
               ]
             },
             {
               "day": 2,
               "exercises": [
-                { "name": "Push-ups with hands at different levels", "sets": 4, "reps": 12},
-                { "name": "Ring push-ups with control", "sets": 4, "reps": 8},
-                { "name": "Supported single-leg squats", "sets": 4, "reps": 10}
+                { "name": "Push-ups with hands at different levels", "sets": 4, "reps": 12, "videoUrl": "https://example.com/push-ups-different-levels" },
+                { "name": "Ring push-ups with control", "sets": 4, "reps": 8, "videoUrl": "https://example.com/ring-push-ups" },
+                { "name": "Supported single-leg squats", "sets": 4, "reps": 10, "videoUrl": "https://example.com/single-leg-squats" }
               ]
             },
             {
               "day": 3,
               "exercises": [
-                { "name": "Single-leg jump squats", "sets": 3, "reps": 8},
-                { "name": "Pistol Squats", "sets": 4, "reps": 10},
-                { "name": "Pistol Squats", "sets": 4, "reps": 10}
+                { "name": "Single-leg jump squats", "sets": 3, "reps": 8, "videoUrl": "https://example.com/jump-squats" },
+                { "name": "Pistol Squats", "sets": 4, "reps": 10, "videoUrl": "https://example.com/pistol-squats" },
+                { "name": "Plank with alternating arms and legs", "sets": 3, "sec": 50, "videoUrl": "https://example.com/plank-alternating-arms-legs" }
               ]
             }
           ]
@@ -188,25 +200,25 @@
             {
               "day": 1,
               "exercises": [
-                { "name": "Wide-grip pull-ups", "sets": 4, "reps": 10},
-                { "name": "Ring rows with a hold at the end position", "sets": 4, "reps": 8},
-                { "name": "Forearm plank with alternating legs", "sets": 3, "sec": 50}
+                { "name": "Wide-grip pull-ups", "sets": 4, "reps": 10, "videoUrl": "https://example.com/wide-grip-pull-ups" },
+                { "name": "Push-ups with elevated feet", "sets": 4, "reps": 8, "videoUrl": "https://example.com/elevated-push-ups" },
+                { "name": "Forearm plank with alternating legs", "sets": 3, "sec": 50, "videoUrl": "https://example.com/forearm-plank" }
               ]
             },
             {
               "day": 2,
               "exercises": [
-                { "name": "Handstand push-ups against the wall", "sets": 4, "reps": 6},
-                { "name": "Dips with a pause at the bottom", "sets": 4, "reps": 10},
-                { "name": "Jump squats", "sets": 4, "reps": 20}
+                { "name": "Handstand push-ups against the wall", "sets": 4, "reps": 6, "videoUrl": "https://example.com/handstand-push-ups" },
+                { "name": "Dips with a pause at the bottom", "sets": 4, "reps": 10, "videoUrl": "https://example.com/dips-pause" },
+                { "name": "Jump squats", "sets": 4, "reps": 20, "videoUrl": "https://example.com/jump-squats" }
               ]
             },
             {
               "day": 3,
               "exercises": [
-                { "name": "Jump squats", "sets": 3, "reps": 12},
-                { "name": "Hanging leg raises", "sets": 3, "reps": 15},
-                { "name": "Plank with arm and leg raise", "sets": 3, "reps": 50}
+                { "name": "Jump squats", "sets": 3, "reps": 12, "videoUrl": "https://example.com/jump-squats" },
+                { "name": "Hanging leg raises", "sets": 3, "reps": 15, "videoUrl": "https://example.com/hanging-leg-raises" },
+                { "name": "Plank with arm and leg raise", "sets": 3, "sec": 50, "videoUrl": "https://example.com/plank-arm-leg" }
               ]
             }
           ]
@@ -217,25 +229,25 @@
             {
               "day": 1,
               "exercises": [
-                { "name": "One-arm Pull-ups", "sets": 4, "reps": 3},
-                { "name": "Ring rows at an angle", "sets": 4, "reps": 12},
-                { "name": "Plank with hold", "sets": 3, "sec": 60}
+                { "name": "One-arm Pull-ups", "sets": 4, "reps": 3, "videoUrl": "https://example.com/one-arm-pull-ups" },
+                { "name": "Wide push-ups", "sets": 4, "reps": 12, "videoUrl": "https://example.com/wide-push-ups" },
+                { "name": "Plank with hold", "sets": 3, "sec": 60, "videoUrl": "https://example.com/plank-hold" }
               ]
             },
             {
               "day": 2,
               "exercises": [
-                { "name": "Wide-grip push-ups", "sets": 4, "reps": 12},
-                { "name": "Ring push-ups with deep dip", "sets": 4, "reps": 10},
-                { "name": "Single-leg jump squats", "sets": 4, "reps": 8}
+                { "name": "Wide-grip push-ups", "sets": 4, "reps": 12, "videoUrl": "https://example.com/wide-grip-push-ups" },
+                { "name": "Push-ups with deep dip", "sets": 4, "reps": 10, "videoUrl": "https://example.com/deep-dip-push-ups" },
+                { "name": "Single-leg jump squats", "sets": 4, "reps": 8, "videoUrl": "https://example.com/jump-squats" }
               ]
             },
             {
               "day": 3,
               "exercises": [
-                { "name": "Single-leg jump squats", "sets": 4, "reps": 6},
-                { "name": "Hanging leg raises with a hold", "sets": 3, "reps": 15},
-                { "name": "Plank with alternating arms and legs", "sets": 3, "sec": 60}
+                { "name": "Single-leg jump squats", "sets": 4, "reps": 6, "videoUrl": "https://example.com/jump-squats" },
+                { "name": "Hanging leg raises with a hold", "sets": 3, "reps": 15, "videoUrl": "https://example.com/hanging-leg-raises-hold" },
+                { "name": "Plank with alternating arms and legs", "sets": 3, "sec": 60, "videoUrl": "https://example.com/plank-alternating-arms-legs" }
               ]
             }
           ]
