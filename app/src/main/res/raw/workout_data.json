@@ -145,7 +145,7 @@
                 { "name": "Tuck L Pull Up", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=zoCQXK5ucCw" },
                 { "name": "Dips on parallel bars", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As" },
                 { "name": "Bench Dips", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=larQGD02ndE" },
-                { "name": "Plank with arm and leg lifts", "sets": 3, "sec": 40, "videoUrl": "https://www.youtube.com/watch?v=iWjH5xgZgyQ" }
+                { "name": "L-Sit Leg Raises On a Bar", "sets": 3, "sec": 40, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
               ]
             },
             {
@@ -154,7 +154,7 @@
                 { "name": "Tuck L Pull Up (Narrow Grip)", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=ziQjz1-DmX8" },
                 { "name": "Explosive Dips", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=1zAkniPmt88" },
                 { "name": "Skull Crasher Push Ups", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=HcbzWkuKpn8" },
-                { "name": "Jump squats", "sets": 4, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=eUl1Ttx8b98" }
+                { "name": "Windshield Wipers", "sets": 4, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
               ]
             },
             {
@@ -162,7 +162,8 @@
               "exercises": [
                 { "name": "Tuck L Chin Up (Narrow Grip)", "sets": 3, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=u1t9XNVHQk4" },
                 { "name": "Slow Dips", "sets": 3, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=1VjFTSSQx9Q" },
-                { "name": "Pseudo Planche Push Up", "sets": 3, "sec": 40, "videoUrl": "https://www.youtube.com/watch?v=lpZUsYQVwuE" }
+                { "name": "Pseudo Planche Push Up", "sets": 3, "sec": 40, "videoUrl": "https://www.youtube.com/watch?v=lpZUsYQVwuE" },
+                { "name": "L-Sit Leg Raises On a Bar", "sets": 3, "sec": 40, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
               ]
             }
           ]
@@ -175,7 +176,8 @@
               "exercises": [
                 { "name": "Wide-Grip Pull-Ups", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=dWB-hEfgMD4" },
                 { "name": "Dips on parallel bars", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As" },
-                { "name": "Archer Push Ups", "sets": 3, "sec": 45, "videoUrl": "https://www.youtube.com/watch?v=25t7UBYCMbE" }
+                { "name": "Archer Push Ups", "sets": 3, "sec": 45, "videoUrl": "https://www.youtube.com/watch?v=25t7UBYCMbE" },
+                { "name": "Windshield Wipers", "sets": 3, "sec": 45, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
               ]
             },
             {
@@ -183,7 +185,8 @@
               "exercises": [
                 { "name": "Archer Pull-Ups", "sets": 4, "reps": 12, "videoUrl": "https://www.youtube.com/watch?v=ziQjz1-DmX8" },
                 { "name": "Explosive Dips", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=1zAkniPmt88" },
-                { "name": "Diamond Push Ups", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=XtU2VQVuLYs" }
+                { "name": "Diamond Push Ups", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=XtU2VQVuLYs" },
+                { "name": "L-Sit Leg Raises On a Bar", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
               ]
             },
             {
@@ -191,7 +194,8 @@
               "exercises": [
                 { "name": "Commando Pull Up", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" },
                 { "name": "Slow Dips", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=1VjFTSSQx9Q" },
-                { "name": "Spider-man Push-Up", "sets": 3, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=FbIrd0_4X1w" }
+                { "name": "Spider-man Push-Up", "sets": 3, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=FbIrd0_4X1w" },
+                { "name": "Windshield Wipers", "sets": 3, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
               ]
             }
           ]
@@ -204,7 +208,8 @@
               "exercises": [
                 { "name": "Tuck L Pull Up", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=zoCQXK5ucCw" },
                 { "name": "Dips on parallel bars", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As" },
-                { "name": "Bench Dips", "sets": 3, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=larQGD02ndE" }
+                { "name": "Bench Dips", "sets": 3, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=larQGD02ndE" },
+                { "name": "L-Sit Leg Raises On a Bar", "sets": 3, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
               ]
             },
             {
@@ -212,7 +217,8 @@
               "exercises": [
                 { "name": "Tuck L Pull Up (Narrow Grip)", "sets": 4, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=ziQjz1-DmX8" },
                 { "name": "Explosive Dips", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=1zAkniPmt88" },
-                { "name": "Skull Crasher Push Ups", "sets": 4, "reps": 20, "videoUrl": "https://www.youtube.com/watch?v=HcbzWkuKpn8" }
+                { "name": "Skull Crasher Push Ups", "sets": 4, "reps": 20, "videoUrl": "https://www.youtube.com/watch?v=HcbzWkuKpn8" },
+                { "name": "Windshield Wipers", "sets": 4, "reps": 20, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
               ]
             },
             {
@@ -220,7 +226,8 @@
               "exercises": [
                 { "name": "Tuck L Chin Up (Narrow Grip)", "sets": 3, "reps": 12, "videoUrl": "https://www.youtube.com/watch?v=u1t9XNVHQk4" },
                 { "name": "Slow Dips", "sets": 3, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=1VjFTSSQx9Q" },
-                { "name": "Pseudo Planche Push Up", "sets": 3, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=lpZUsYQVwuE" }
+                { "name": "Pseudo Planche Push Up", "sets": 3, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=lpZUsYQVwuE" },
+                { "name": "L-Sit Leg Raises On a Bar", "sets": 3, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
               ]
             }
           ]
@@ -233,7 +240,8 @@
               "exercises": [
                 { "name": "Wide-Grip Pull-Ups", "sets": 4, "reps": 3, "videoUrl": "https://www.youtube.com/watch?v=dWB-hEfgMD4" },
                 { "name": "Dips on parallel bars", "sets": 4, "reps": 12, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As" },
-                { "name": "Archer Push Ups", "sets": 3, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=25t7UBYCMbE" }
+                { "name": "Archer Push Ups", "sets": 3, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=25t7UBYCMbE" },
+                { "name": "Windshield Wipers", "sets": 3, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
               ]
             },
             {
@@ -241,7 +249,8 @@
               "exercises": [
                 { "name": "Archer Pull-Ups", "sets": 4, "reps": 12, "videoUrl": "https://www.youtube.com/watch?v=ziQjz1-DmX8" },
                 { "name": "Explosive Dips", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=1zAkniPmt88" },
-                { "name": "Diamond Push Ups", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=XtU2VQVuLYs" }
+                { "name": "Diamond Push Ups", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=XtU2VQVuLYs" },
+                { "name": "L-Sit Leg Raises On a Bar", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
               ]
             },
             {
@@ -249,7 +258,8 @@
               "exercises": [
                 { "name": "Commando Pull Up", "sets": 4, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" },
                 { "name": "Slow Dips", "sets": 3, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=1VjFTSSQx9Q" },
-                { "name": "Spider-man Push-Up", "sets": 3, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=FbIrd0_4X1w" }
+                { "name": "Spider-man Push-Up", "sets": 3, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=FbIrd0_4X1w" },
+                { "name": "Windshield Wipers", "sets": 3, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
               ]
             }
           ]
