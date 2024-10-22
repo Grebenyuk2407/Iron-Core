@@ -275,25 +275,25 @@
             {
               "day": 1,
               "exercises": [
-                { "name": "One-arm Pull-ups", "sets": 4, "reps": 3},
-                { "name": "Ring rows in a horizontal position with feet elevated", "sets": 4, "reps": 8},
-                { "name": "Plank with alternating arm and leg lifts", "sets": 4, "sec": 50}
+                { "name": "Front Lever Pike Pull Up", "sets": 4, "reps": 3, "videoUrl": "https://www.youtube.com/watch?v=zw9NrXnC8Qo" },
+                { "name": "Ring rows in a horizontal position with feet elevated", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" },
+                { "name": "Plank with alternating arm and leg lifts", "sets": 4, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" }
               ]
             },
             {
               "day": 2,
               "exercises": [
-                { "name": "Handstand Push-ups", "sets": 4, "reps": 6},
-                { "name": "Ring push-ups with control", "sets": 4, "reps": 10},
-                { "name": "Single-leg pistol squats", "sets": 4, "reps": 10}
+                { "name": "L Sit Pull Up (Narrow Grip)", "sets": 4, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=nzLvU1KAlxg" },
+                { "name": "Ring push-ups with control", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" },
+                { "name": "Single-leg pistol squats", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" }
               ]
             },
             {
               "day": 3,
               "exercises": [
-                { "name": "Single-leg jump squats", "sets": 4, "reps": 8},
-                { "name": "Hanging leg raises with control on a bar", "sets": 4, "reps": 15},
-                { "name": "Plank with alternating arms", "sets": 4, "sec": 60}
+                { "name": "L Sit Chin Up (Narrow Grip)", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=FKwXGW4mf-0" },
+                { "name": "Hanging leg raises with control on a bar", "sets": 4, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" },
+                { "name": "Plank with alternating arms", "sets": 4, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" }
               ]
             }
           ]
@@ -304,25 +304,25 @@
             {
               "day": 1,
               "exercises": [
-                { "name": "Weighted pull-ups", "sets": 4, "reps": 6},
-                { "name": "Ring rows with a pause at the top", "sets": 4, "reps": 8},
-                { "name": "Elbow plank with alternating leg lifts", "sets": 4, "sec": 60}
+                { "name": "Muscle-Up", "sets": 4, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=_iYvlSMgUGE" },
+                { "name": "Ring rows with a pause at the top", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" },
+                { "name": "Elbow plank with alternating leg lifts", "sets": 4, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" }
               ]
             },
             {
               "day": 2,
               "exercises": [
-                { "name": "Handstand push-ups with a pause", "sets": 4, "reps": 6},
-                { "name": "Dips on parallel bars with control", "sets": 4, "reps": 10},
-                { "name": "Jump squats with a hold at the bottom", "sets": 4, "reps": 15}
+                { "name": "Archer Push Ups", "sets": 4, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=ziQjz1-DmX8" },
+                { "name": "Dips on parallel bars with control", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" },
+                { "name": "Jump squats with a hold at the bottom", "sets": 4, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" }
               ]
             },
             {
               "day": 3,
               "exercises": [
-                { "name": "Single-leg jump squats", "sets": 4, "reps": 10},
-                { "name": "Hanging leg raises on rings with a pause", "sets": 4, "reps": 15},
-                { "name": "Plank with arm and leg lifts", "sets": 4, "sec": 60}
+                { "name": "Behind-the-Neck Pull-Ups", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=EAJJQjF2j6s" },
+                { "name": "Hanging leg raises on rings with a pause", "sets": 4, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" },
+                { "name": "Plank with arm and leg lifts", "sets": 4, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" }
               ]
             }
           ]
@@ -333,25 +333,25 @@
             {
               "day": 1,
               "exercises": [
-                { "name": "Pull-ups on rings (with control) ", "sets": 4, "reps": 10},
-                { "name": "Ring rows with feet elevated", "sets": 4, "reps": 12},
-                { "name": "Elbow plank with leg lifts", "sets": 4, "reps": 60}
+                { "name": "Front Lever Pike Pull Up", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=zw9NrXnC8Qo" },
+                { "name": "Ring rows with feet elevated", "sets": 4, "reps": 12, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" },
+                { "name": "Elbow plank with leg lifts", "sets": 4, "reps": 60, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" }
               ]
             },
             {
               "day": 2,
               "exercises": [
-                { "name": "Handstand push-ups with controlled lowering", "sets": 4, "reps": 6},
-                { "name": "Low grip ring push-ups", "sets": 4, "reps": 10},
-                { "name": "Single-leg jump squats", "sets": 4, "reps": 12}
+                { "name": "L Sit Pull Up (Narrow Grip)", "sets": 4, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=nzLvU1KAlxg" },
+                { "name": "Low grip ring push-ups", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" },
+                { "name": "Single-leg jump squats", "sets": 4, "reps": 12, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" }
               ]
             },
             {
               "day": 3,
               "exercises": [
-                { "name": "Single-leg explosive jump squats", "sets": 4, "reps": 12},
-                { "name": "Hanging leg raises with a pause on a bar", "sets": 4, "reps": 20},
-                { "name": "Plank with alternating arms and legs", "sets": 4, "sec": 60}
+                { "name": "L Sit Chin Up (Narrow Grip)", "sets": 4, "reps": 12, "videoUrl": "https://www.youtube.com/watch?v=FKwXGW4mf-0" },
+                { "name": "Hanging leg raises with a pause on a bar", "sets": 4, "reps": 20, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" },
+                { "name": "Plank with alternating arms and legs", "sets": 4, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" }
               ]
             }
           ]
@@ -362,25 +362,25 @@
             {
               "day": 1,
               "exercises": [
-                { "name": "Weighted or one-arm pull-ups", "sets": 3, "reps": 4},
-                { "name": "Ring rows with a pause", "sets": 4, "reps": 10},
-                { "name": "Plank hold", "sets": 4, "sec": 60}
+                { "name": "Muscle-Up", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=_iYvlSMgUGE" },
+                { "name": "Ring rows with a pause", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" },
+                { "name": "Plank hold", "sets": 4, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" }
               ]
             },
             {
               "day": 2,
               "exercises": [
-                { "name": "Freestanding handstand push-ups", "sets": 4, "reps": 6},
-                { "name": "Deep ring push-ups", "sets": 4, "reps": 10},
-                { "name": "Single-leg jump squats with a hold", "sets": 4, "reps": 10}
+                { "name": "Archer Push Ups", "sets": 4, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=ziQjz1-DmX8" },
+                { "name": "Deep ring push-ups", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" },
+                { "name": "Single-leg jump squats with a hold", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" }
               ]
             },
             {
               "day": 3,
               "exercises": [
-                { "name": "Single-leg jump squats with a hold", "sets": 4, "reps": 12},
-                { "name": "Hanging leg raises with control on rings", "sets": 4, "reps": 20},
-                { "name": "Plank with alternating arms and legs", "sets": 4, "sec": 60}
+                { "name": "Behind-the-Neck Pull-Ups", "sets": 4, "reps": 12, "videoUrl": "https://www.youtube.com/watch?v=EAJJQjF2j6s" },
+                { "name": "Hanging leg raises with control on rings", "sets": 4, "reps": 20, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" },
+                { "name": "Plank with alternating arms and legs", "sets": 4, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" }
               ]
             }
           ]
