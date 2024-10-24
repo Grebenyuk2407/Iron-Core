@@ -9,28 +9,28 @@
             {
               "day": 1,
               "exercises": [
-                { "name": "Australian Pull Up", "sets": 3, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=bHO0A4ZF_Zg"},
+                { "name": "Australian Pull Up", "sets": 3, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=bHO0A4ZF_Zg"},
                 { "name": "Dips on parallel bars", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
                 { "name": "Push up from floor", "sets": 3, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=lVNzuIArliA"},
-                { "name": "Hanging Knee Raises", "sets": 3, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=KNzJ3GuIpB8"}
+                { "name": "Hanging Knee Raises", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=KNzJ3GuIpB8"}
               ]
             },
             {
               "day": 2,
               "exercises": [
-                { "name": "Pull-ups on a bar", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g"},
+                { "name": "Pull-ups on a bar", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g"},
                 { "name": "Dips on parallel bars", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
-                { "name": "Wide Push Ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=EsIdzx1J0iA"},
-                { "name": "Hanging Side Knee Raise", "sets": 3, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=bT5pfL6ROIU"}
+                { "name": "Wide Push Ups", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=EsIdzx1J0iA"},
+                { "name": "Hanging Side Knee Raise", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=bT5pfL6ROIU"}
               ]
             },
             {
               "day": 3,
               "exercises": [
-                { "name": "Commando Pull Up", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc"},
-                { "name": "Dips on parallel bars", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
-                { "name": "Diamond Push Ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=XtU2VQVuLYs"},
-                { "name": "Hanging Knee Raises", "sets": 3, "sec": 25, "videoUrl": "https://www.youtube.com/watch?v=KNzJ3GuIpB8"}
+                { "name": "Commando Pull Up", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Diamond Push Ups", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=XtU2VQVuLYs"},
+                { "name": "Hanging Knee Raises", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=KNzJ3GuIpB8"}
               ]
             }
           ]
@@ -41,28 +41,28 @@
             {
               "day": 1,
               "exercises": [
-                { "name": "Reverse Grip Pull-ups", "sets": 3, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=4q4u077Cmlw"},
-                { "name": "Dips on parallel bars", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Chin-ups", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=g8ODo7my6oQ"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
                 { "name": "Pike Push Ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=XckEEwa1BPI"},
-                { "name": "Hanging Side Knee Raise", "sets": 3, "sec": 30, "videoUrl": "https://www.youtube.com/watch?v=bT5pfL6ROIU"}
+                { "name": "Hanging Side Knee Raise", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=bT5pfL6ROIU"}
               ]
             },
             {
               "day": 2,
               "exercises": [
-                { "name": "Close grip Pull-ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2JxlabCXxAc"},
-                { "name": "Dips on parallel bars", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
-                { "name": "Push up from floor", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=lVNzuIArliA"},
-                { "name": "Hanging Knee Raises", "sets": 3, "reps": 12, "videoUrl": "https://www.youtube.com/watch?v=KNzJ3GuIpB8"}
+                { "name": "Close grip Pull-ups", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=2JxlabCXxAc"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Push up from floor", "sets": 3, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=lVNzuIArliA"},
+                { "name": "Hanging Knee Raises", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=KNzJ3GuIpB8"}
               ]
             },
             {
               "day": 3,
               "exercises": [
-                { "name": "Australian Pull Up", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=bHO0A4ZF_Zg"},
-                { "name": "Dips on parallel bars", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
-                { "name": "Wide Push Ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=EsIdzx1J0iA"},
-                { "name": "Hanging Side Knee Raise", "sets": 3, "sec": 30, "videoUrl": "https://www.youtube.com/watch?v=bT5pfL6ROIU"}
+                { "name": "Australian Pull Up", "sets": 3, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=bHO0A4ZF_Zg"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Wide Push Ups", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=EsIdzx1J0iA"},
+                { "name": "Hanging Side Knee Raise", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=bT5pfL6ROIU"}
               ]
             }
           ]
@@ -73,28 +73,28 @@
             {
               "day": 1,
               "exercises": [
-                { "name": "Pull-ups on a bar", "sets": 3, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g"},
-                { "name": "Dips on parallel bars", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
-                { "name": "Diamond Push Ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=XtU2VQVuLYs"},
-                { "name": "Hanging Knee Raises", "sets": 3, "sec": 30, "videoUrl": "https://www.youtube.com/watch?v=KNzJ3GuIpB8"}
+                { "name": "Pull-ups on a bar", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Diamond Push Ups", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=XtU2VQVuLYs"},
+                { "name": "Hanging Knee Raises", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=KNzJ3GuIpB8"}
               ]
             },
             {
               "day": 2,
               "exercises": [
-                { "name": "Commando Pull Up", "sets": 3, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc"},
-                { "name": "Dips on parallel bars", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Commando Pull Up", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
                 { "name": "Pike Push Ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=XckEEwa1BPI"},
-                { "name": "Hanging Side Knee Raise", "sets": 3, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=bT5pfL6ROIU"}
+                { "name": "Hanging Side Knee Raise", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=bT5pfL6ROIU"}
               ]
             },
             {
               "day": 3,
               "exercises": [
-                { "name": "Chin Up", "sets": 3, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=4q4u077Cmlw"},
-                { "name": "Dips on parallel bars", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
-                { "name": "Push up from floor", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=lVNzuIArliA"},
-                { "name": "Hanging Knee Raises", "sets": 3, "sec": 30, "videoUrl": "https://www.youtube.com/watch?v=KNzJ3GuIpB8"}
+                { "name": "Chin Ups", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=g8ODo7my6oQ"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Push up from floor", "sets": 3, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=lVNzuIArliA"},
+                { "name": "Hanging Knee Raises", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=KNzJ3GuIpB8"}
               ]
             }
           ]
@@ -105,28 +105,28 @@
             {
               "day": 1,
               "exercises": [
-                { "name": "Close grip Pull-ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2JxlabCXxAc"},
-                { "name": "Dips on parallel bars", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
-                { "name": "Wide Push Ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=EsIdzx1J0iA"},
-                { "name": "Hanging Side Knee Raise", "sets": 3, "sec": 30, "videoUrl": "https://www.youtube.com/watch?v=bT5pfL6ROIU"}
+                { "name": "Close grip Pull-ups", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=2JxlabCXxAc"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Wide Push Ups", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=EsIdzx1J0iA"},
+                { "name": "Hanging Side Knee Raise", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=bT5pfL6ROIU"}
               ]
             },
             {
               "day": 2,
               "exercises": [
-                { "name": "Australian Pull Up", "sets": 3, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=bHO0A4ZF_Zg"},
-                { "name": "Dips on parallel bars", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
-                { "name": "Diamond Push Ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=XtU2VQVuLYs"},
-                { "name": "Hanging Knee Raises", "sets": 3, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=KNzJ3GuIpB8"}
+                { "name": "Australian Pull Up", "sets": 3, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=bHO0A4ZF_Zg"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Diamond Push Ups", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=XtU2VQVuLYs"},
+                { "name": "Hanging Knee Raises", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=KNzJ3GuIpB8"}
               ]
             },
             {
               "day": 3,
               "exercises": [
-                { "name": "Pull-ups on a bar", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g"},
-                { "name": "Dips on parallel bars", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
+                { "name": "Pull-ups on a bar", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=eGo4IYlbE5g"},
+                { "name": "Dips on parallel bars", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As"},
                 { "name": "Pike Push Ups", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=XckEEwa1BPI"},
-                { "name": "Hanging Side Knee Raise", "sets": 3, "sec": 30, "videoUrl": "https://www.youtube.com/watch?v=bT5pfL6ROIU"}
+                { "name": "Hanging Side Knee Raise", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=bT5pfL6ROIU"}
               ]
             }
           ]
@@ -142,28 +142,28 @@
             {
               "day": 1,
               "exercises": [
-                { "name": "Tuck L Pull Up", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=zoCQXK5ucCw" },
-                { "name": "Dips on parallel bars", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As" },
-                { "name": "Bench Dips", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=larQGD02ndE" },
-                { "name": "L-Sit Leg Raises On a Bar", "sets": 3, "sec": 40, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
+                { "name": "Tuck L Pull Up", "sets": 4, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=zoCQXK5ucCw" },
+                { "name": "Dips on parallel bars", "sets": 4, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As" },
+                { "name": "Bench Dips", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=iu30U9JO8nU" },
+                { "name": "L-Sit Leg Raises On a Bar", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
               ]
             },
             {
               "day": 2,
               "exercises": [
-                { "name": "Tuck L Pull Up (Narrow Grip)", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=ziQjz1-DmX8" },
-                { "name": "Explosive Dips", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=1zAkniPmt88" },
-                { "name": "Skull Crasher Push Ups", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=HcbzWkuKpn8" },
-                { "name": "Windshield Wipers", "sets": 4, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
+                { "name": "Tuck L Pull Up (Narrow Grip)", "sets": 4, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=ziQjz1-DmX8" },
+                { "name": "Explosive Dips", "sets": 4, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=1zAkniPmt88" },
+                { "name": "Skull Crasher Push Ups", "sets": 4, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=HcbzWkuKpn8" },
+                { "name": "Windshield Wipers", "sets": 4, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
               ]
             },
             {
               "day": 3,
               "exercises": [
-                { "name": "Tuck L Chin Up (Narrow Grip)", "sets": 3, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=u1t9XNVHQk4" },
-                { "name": "Slow Dips", "sets": 3, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=1VjFTSSQx9Q" },
-                { "name": "Pseudo Planche Push Up", "sets": 3, "sec": 40, "videoUrl": "https://www.youtube.com/watch?v=lpZUsYQVwuE" },
-                { "name": "L-Sit Leg Raises On a Bar", "sets": 3, "sec": 40, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
+                { "name": "Tuck L Chin Up (Narrow Grip)", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=u1t9XNVHQk4" },
+                { "name": "Slow Dips", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=1VjFTSSQx9Q" },
+                { "name": "Pseudo Planche Push Up", "sets": 4, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=lpZUsYQVwuE" },
+                { "name": "L-Sit Leg Raises On a Bar", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
               ]
             }
           ]
@@ -174,28 +174,28 @@
             {
               "day": 1,
               "exercises": [
-                { "name": "Wide-Grip Pull-Ups", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=dWB-hEfgMD4" },
-                { "name": "Dips on parallel bars", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As" },
-                { "name": "Archer Push Ups", "sets": 3, "sec": 45, "videoUrl": "https://www.youtube.com/watch?v=25t7UBYCMbE" },
-                { "name": "Windshield Wipers", "sets": 3, "sec": 45, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
+                { "name": "Wide-Grip Pull-Ups", "sets": 4, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=dWB-hEfgMD4" },
+                { "name": "Dips on parallel bars", "sets": 4, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As" },
+                { "name": "Archer Push Ups", "sets": 4, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=25t7UBYCMbE" },
+                { "name": "Windshield Wipers", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
               ]
             },
             {
               "day": 2,
               "exercises": [
-                { "name": "Archer Pull-Ups", "sets": 4, "reps": 12, "videoUrl": "https://www.youtube.com/watch?v=ziQjz1-DmX8" },
-                { "name": "Explosive Dips", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=1zAkniPmt88" },
-                { "name": "Diamond Push Ups", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=XtU2VQVuLYs" },
-                { "name": "L-Sit Leg Raises On a Bar", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
+                { "name": "Archer Pull-Ups", "sets": 4, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=ziQjz1-DmX8" },
+                { "name": "Explosive Dips", "sets": 4, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=1zAkniPmt88" },
+                { "name": "Diamond Push Ups", "sets": 4, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=XtU2VQVuLYs" },
+                { "name": "L-Sit Leg Raises On a Bar", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
               ]
             },
             {
               "day": 3,
               "exercises": [
                 { "name": "Commando Pull Up", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" },
-                { "name": "Slow Dips", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=1VjFTSSQx9Q" },
-                { "name": "Spider-man Push-Up", "sets": 3, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=FbIrd0_4X1w" },
-                { "name": "Windshield Wipers", "sets": 3, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
+                { "name": "Slow Dips", "sets": 4, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=1VjFTSSQx9Q" },
+                { "name": "Spider-man Push-Up", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=FbIrd0_4X1w" },
+                { "name": "Windshield Wipers", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
               ]
             }
           ]
@@ -206,28 +206,28 @@
             {
               "day": 1,
               "exercises": [
-                { "name": "Tuck L Pull Up", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=zoCQXK5ucCw" },
-                { "name": "Dips on parallel bars", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As" },
-                { "name": "Bench Dips", "sets": 3, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=larQGD02ndE" },
-                { "name": "L-Sit Leg Raises On a Bar", "sets": 3, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
+                { "name": "Tuck L Pull Up", "sets": 4, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=zoCQXK5ucCw" },
+                { "name": "Dips on parallel bars", "sets": 4, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As" },
+                { "name": "Bench Dips", "sets": 3, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=iu30U9JO8nU" },
+                { "name": "L-Sit Leg Raises On a Bar", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
               ]
             },
             {
               "day": 2,
               "exercises": [
-                { "name": "Tuck L Pull Up (Narrow Grip)", "sets": 4, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=ziQjz1-DmX8" },
-                { "name": "Explosive Dips", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=1zAkniPmt88" },
-                { "name": "Skull Crasher Push Ups", "sets": 4, "reps": 20, "videoUrl": "https://www.youtube.com/watch?v=HcbzWkuKpn8" },
-                { "name": "Windshield Wipers", "sets": 4, "reps": 20, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
+                { "name": "Tuck L Pull Up (Narrow Grip)", "sets": 4, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=ziQjz1-DmX8" },
+                { "name": "Explosive Dips", "sets": 4, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=1zAkniPmt88" },
+                { "name": "Skull Crasher Push Ups", "sets": 4, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=HcbzWkuKpn8" },
+                { "name": "Windshield Wipers", "sets": 4, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
               ]
             },
             {
               "day": 3,
               "exercises": [
-                { "name": "Tuck L Chin Up (Narrow Grip)", "sets": 3, "reps": 12, "videoUrl": "https://www.youtube.com/watch?v=u1t9XNVHQk4" },
-                { "name": "Slow Dips", "sets": 3, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=1VjFTSSQx9Q" },
-                { "name": "Pseudo Planche Push Up", "sets": 3, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=lpZUsYQVwuE" },
-                { "name": "L-Sit Leg Raises On a Bar", "sets": 3, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
+                { "name": "Tuck L Chin Up (Narrow Grip)", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=u1t9XNVHQk4" },
+                { "name": "Slow Dips", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=1VjFTSSQx9Q" },
+                { "name": "Pseudo Planche Push Up", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=lpZUsYQVwuE" },
+                { "name": "L-Sit Leg Raises On a Bar", "sets": 3, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
               ]
             }
           ]
@@ -238,28 +238,28 @@
             {
               "day": 1,
               "exercises": [
-                { "name": "Wide-Grip Pull-Ups", "sets": 4, "reps": 3, "videoUrl": "https://www.youtube.com/watch?v=dWB-hEfgMD4" },
-                { "name": "Dips on parallel bars", "sets": 4, "reps": 12, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As" },
-                { "name": "Archer Push Ups", "sets": 3, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=25t7UBYCMbE" },
-                { "name": "Windshield Wipers", "sets": 3, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
+                { "name": "Wide-Grip Pull-Ups", "sets": 4, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=dWB-hEfgMD4" },
+                { "name": "Dips on parallel bars", "sets": 4, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As" },
+                { "name": "Archer Push Ups", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=25t7UBYCMbE" },
+                { "name": "Windshield Wipers", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
               ]
             },
             {
               "day": 2,
               "exercises": [
-                { "name": "Archer Pull-Ups", "sets": 4, "reps": 12, "videoUrl": "https://www.youtube.com/watch?v=ziQjz1-DmX8" },
-                { "name": "Explosive Dips", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=1zAkniPmt88" },
+                { "name": "Archer Pull-Ups", "sets": 4, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=ziQjz1-DmX8" },
+                { "name": "Explosive Dips", "sets": 4, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=1zAkniPmt88" },
                 { "name": "Diamond Push Ups", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=XtU2VQVuLYs" },
-                { "name": "L-Sit Leg Raises On a Bar", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
+                { "name": "L-Sit Leg Raises On a Bar", "sets": 4, "reps": 5, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
               ]
             },
             {
               "day": 3,
               "exercises": [
                 { "name": "Commando Pull Up", "sets": 4, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=8PMUG46CmHc" },
-                { "name": "Slow Dips", "sets": 3, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=1VjFTSSQx9Q" },
-                { "name": "Spider-man Push-Up", "sets": 3, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=FbIrd0_4X1w" },
-                { "name": "Windshield Wipers", "sets": 3, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
+                { "name": "Slow Dips", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=1VjFTSSQx9Q" },
+                { "name": "Spider-man Push-Up", "sets": 4, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=FbIrd0_4X1w" },
+                { "name": "Windshield Wipers", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
               ]
             }
           ]
@@ -277,8 +277,8 @@
               "exercises": [
                 { "name": "Front Lever Pike Pull Up", "sets": 4, "reps": 3, "videoUrl": "https://www.youtube.com/watch?v=zw9NrXnC8Qo" },
                 { "name": "Korean Dips", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=42-lPrG7dkU" },
-                { "name": "Aztec Push-Ups", "sets": 4, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=4zsi1xn33vM" },
-                { "name": "Hanging Leg Lifts", "sets": 4, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=at_A-H6JTGk" }
+                { "name": "Aztec Push-Ups", "sets": 4, "reps": 50, "videoUrl": "https://www.youtube.com/watch?v=4zsi1xn33vM" },
+                { "name": "Hanging Leg Lifts", "sets": 4, "reps": 50, "videoUrl": "https://www.youtube.com/watch?v=at_A-H6JTGk" }
               ]
             },
             {
@@ -287,7 +287,7 @@
                 { "name": "L Sit Pull Up (Narrow Grip)", "sets": 4, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=nzLvU1KAlxg" },
                 { "name": "Explosive Dips", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=1zAkniPmt88" },
                 { "name": "Pseudo Planche Push-Ups", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=lpZUsYQVwuE" },
-                { "name": "L-Sit Leg Raises On a Bar", "sets": 3, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
+                { "name": "L-Sit Leg Raises On a Bar", "sets": 3, "reps": 50, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
 
               ]
             },
@@ -296,8 +296,8 @@
               "exercises": [
                 { "name": "L Sit Chin Up (Narrow Grip)", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=FKwXGW4mf-0" },
                 { "name": "Dips on parallel bars", "sets": 4, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As" },
-                { "name": "Diamond Push Ups", "sets": 4, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=XtU2VQVuLYs" },
-                { "name": "Windshield Wipers", "sets": 3, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
+                { "name": "Diamond Push Ups", "sets": 4, "reps": 60, "videoUrl": "https://www.youtube.com/watch?v=XtU2VQVuLYs" },
+                { "name": "Windshield Wipers", "sets": 3, "reps": 60, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
               ]
             }
           ]
@@ -310,8 +310,8 @@
               "exercises": [
                 { "name": "Muscle-Up", "sets": 4, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=_iYvlSMgUGE" },
                 { "name": "Korean Dips", "sets": 4, "reps": 8, "videoUrl": "https://www.youtube.com/watch?v=42-lPrG7dkU" },
-                { "name": "Handstand Push-Ups", "sets": 4, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=WxgJS48wf1M" },
-                { "name": "Hanging Leg Lifts", "sets": 4, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=at_A-H6JTGk" }
+                { "name": "Handstand Push-Ups", "sets": 4, "reps": 60, "videoUrl": "https://www.youtube.com/watch?v=WxgJS48wf1M" },
+                { "name": "Hanging Leg Lifts", "sets": 4, "reps": 50, "videoUrl": "https://www.youtube.com/watch?v=at_A-H6JTGk" }
               ]
             },
             {
@@ -320,7 +320,7 @@
                 { "name": "Archer Pull-Ups", "sets": 4, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=ziQjz1-DmX8" },
                 { "name": "Explosive Dips", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=1zAkniPmt88" },
                 { "name": "Aztec Push-Ups", "sets": 4, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=4zsi1xn33vM" },
-                { "name": "L-Sit Leg Raises On a Bar", "sets": 3, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
+                { "name": "L-Sit Leg Raises On a Bar", "sets": 3, "reps": 50, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
               ]
             },
             {
@@ -328,8 +328,8 @@
               "exercises": [
                 { "name": "Behind-the-Neck Pull-Ups", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=EAJJQjF2j6s" },
                 { "name": "Dips on parallel bars", "sets": 4, "reps": 15, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As" },
-                { "name": "Pseudo Planche Push-Ups", "sets": 4, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=lpZUsYQVwuE" },
-                { "name": "Windshield Wipers", "sets": 3, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
+                { "name": "Pseudo Planche Push-Ups", "sets": 4, "reps": 60, "videoUrl": "https://www.youtube.com/watch?v=lpZUsYQVwuE" },
+                { "name": "Windshield Wipers", "sets": 3, "reps": 60, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
               ]
             }
           ]
@@ -343,7 +343,7 @@
                 { "name": "Front Lever Pike Pull Up", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=zw9NrXnC8Qo" },
                 { "name": "Korean Dips", "sets": 4, "reps": 12, "videoUrl": "https://www.youtube.com/watch?v=42-lPrG7dkU" },
                 { "name": "Diamond Push Ups", "sets": 4, "reps": 60, "videoUrl": "https://www.youtube.com/watch?v=XtU2VQVuLYs" },
-                { "name": "Hanging Leg Lifts", "sets": 4, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=at_A-H6JTGk" }
+                { "name": "Hanging Leg Lifts", "sets": 4, "reps": 50, "videoUrl": "https://www.youtube.com/watch?v=at_A-H6JTGk" }
               ]
             },
             {
@@ -352,7 +352,7 @@
                 { "name": "L Sit Pull Up (Narrow Grip)", "sets": 4, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=nzLvU1KAlxg" },
                 { "name": "Explosive Dips", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=1zAkniPmt88" },
                 { "name": "Handstand Push-Ups", "sets": 4, "reps": 12, "videoUrl": "https://www.youtube.com/watch?v=WxgJS48wf1M" },
-                { "name": "L-Sit Leg Raises On a Bar", "sets": 3, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
+                { "name": "L-Sit Leg Raises On a Bar", "sets": 3, "reps": 50, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
               ]
             },
             {
@@ -360,8 +360,8 @@
               "exercises": [
                 { "name": "L Sit Chin Up (Narrow Grip)", "sets": 4, "reps": 12, "videoUrl": "https://www.youtube.com/watch?v=FKwXGW4mf-0" },
                 { "name": "Dips on parallel bars", "sets": 4, "reps": 20, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As" },
-                { "name": "Aztec Push-Ups", "sets": 4, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=4zsi1xn33vM" },
-                { "name": "Windshield Wipers", "sets": 3, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
+                { "name": "Aztec Push-Ups", "sets": 4, "reps": 60, "videoUrl": "https://www.youtube.com/watch?v=4zsi1xn33vM" },
+                { "name": "Windshield Wipers", "sets": 3, "reps": 60, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
               ]
             }
           ]
@@ -374,8 +374,8 @@
               "exercises": [
                 { "name": "Muscle-Up", "sets": 3, "reps": 4, "videoUrl": "https://www.youtube.com/watch?v=_iYvlSMgUGE" },
                 { "name": "Korean Dips", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=42-lPrG7dkU" },
-                { "name": "Pseudo Planche Push-Ups", "sets": 4, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=lpZUsYQVwuE" },
-                { "name": "Hanging Leg Lifts", "sets": 4, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=at_A-H6JTGk" }
+                { "name": "Pseudo Planche Push-Ups", "sets": 4, "reps": 60, "videoUrl": "https://www.youtube.com/watch?v=lpZUsYQVwuE" },
+                { "name": "Hanging Leg Lifts", "sets": 4, "reps": 50, "videoUrl": "https://www.youtube.com/watch?v=at_A-H6JTGk" }
               ]
             },
             {
@@ -384,7 +384,7 @@
                 { "name": "Archer Pull-Ups", "sets": 4, "reps": 6, "videoUrl": "https://www.youtube.com/watch?v=ziQjz1-DmX8" },
                 { "name": "Explosive Dips", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=1zAkniPmt88" },
                 { "name": "Diamond Push Ups", "sets": 4, "reps": 10, "videoUrl": "https://www.youtube.com/watch?v=XtU2VQVuLYs" },
-                { "name": "L-Sit Leg Raises On a Bar", "sets": 3, "sec": 50, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
+                { "name": "L-Sit Leg Raises On a Bar", "sets": 3, "reps": 50, "videoUrl": "https://www.youtube.com/watch?v=lqbxbNdBvOs" }
               ]
             },
             {
@@ -393,7 +393,7 @@
                 { "name": "Behind-the-Neck Pull-Ups", "sets": 4, "reps": 12, "videoUrl": "https://www.youtube.com/watch?v=EAJJQjF2j6s" },
                 { "name": "Dips on parallel bars", "sets": 4, "reps": 20, "videoUrl": "https://www.youtube.com/watch?v=2z8JmcrW-As" },
                 { "name": "Handstand Push-Ups", "sets": 4, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=WxgJS48wf1M" },
-                { "name": "Windshield Wipers", "sets": 3, "sec": 60, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
+                { "name": "Windshield Wipers", "sets": 3, "reps": 60, "videoUrl": "https://www.youtube.com/watch?v=-6TXUvmU3nk" }
               ]
             }
           ]
