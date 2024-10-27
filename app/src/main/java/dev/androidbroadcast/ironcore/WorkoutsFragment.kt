@@ -21,7 +21,7 @@ class WorkoutsFragment : Fragment() {
     private lateinit var binding: FragmentWorkoutBinding
     private lateinit var firestore: FirebaseFirestore
     private lateinit var workoutAdapter: WorkoutAdapter
-    private var dayExerciseList: List<DayExerciseItem> = listOf()
+    private var currentDay: Int = 1 // Стартовый день 1
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,24 +36,30 @@ class WorkoutsFragment : Fragment() {
 
         firestore = FirebaseFirestore.getInstance()
 
-        // Получаем уровень сложности пользователя из Firestore
-        loadUserDifficultyLevel()
+        // Загружаем уровень сложности и текущий день
+        loadUserProgress()
     }
 
-    private fun loadUserDifficultyLevel() {
+    private fun loadUserProgress() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         userId?.let {
             firestore.collection("users").document(it).get()
                 .addOnSuccessListener { document ->
                     if (document != null) {
                         val difficultyLevel = document.getString("difficultyLevel")
+                        val dayProgress = document.getLong("currentDay")?.toInt() ?: 1
+                        currentDay = dayProgress
+
+                        // Обновляем текст кнопки
+                        binding.btnStartDay.text = "Start Day $currentDay"
+
                         if (difficultyLevel != null) {
                             loadWorkoutsForDifficulty(difficultyLevel)
                         }
                     }
                 }
                 .addOnFailureListener { e ->
-                    Toast.makeText(requireContext(), "Failed to load difficulty level: ${e.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Failed to load progress: ${e.message}", Toast.LENGTH_SHORT).show()
                 }
         }
     }
@@ -80,6 +86,20 @@ class WorkoutsFragment : Fragment() {
         }
 
         setupRecyclerView(dayExerciseItems)
+
+        // Настраиваем клик по кнопке Start
+        binding.btnStartDay.setOnClickListener {
+            startWorkoutForDay(currentDay)
+        }
+    }
+
+    private fun startWorkoutForDay(day: Int) {
+        // Здесь будет логика перехода на экран тренировки
+        Toast.makeText(requireContext(), "Starting Day $day", Toast.LENGTH_SHORT).show()
+
+        // Переход на экран тренировки
+        // Мы можем создать новый фрагмент для отображения текущей тренировки
+        // Навигация на новый фрагмент
     }
 
     private fun loadWorkoutDataFromJson(): WorkoutData? {
@@ -104,4 +124,5 @@ class WorkoutsFragment : Fragment() {
         }
     }
 }
+
 
