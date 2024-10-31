@@ -23,5 +23,6 @@ data class Exercise(
     val name: String,
     val reps: Int?,
     val sec: Int?,
-    val sets: Int
+    val sets: Int,
+    val videoUrl: String
 )

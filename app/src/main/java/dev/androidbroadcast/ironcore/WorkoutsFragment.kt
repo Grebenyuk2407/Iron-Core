@@ -36,11 +36,12 @@ class WorkoutsFragment : Fragment() {
 
         firestore = FirebaseFirestore.getInstance()
 
-        // Загружаем уровень сложности и текущий день
-        loadUserProgress()
+        // Загружаем данные о пользователе, включая программу тренировок и прогресс
+        loadUserProgressAndWorkoutData()
     }
 
-    private fun loadUserProgress() {
+    // Загружаем уровень сложности, прогресс и программу тренировок из Firestore
+    private fun loadUserProgressAndWorkoutData() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         userId?.let {
             firestore.collection("users").document(it).get()
@@ -53,8 +54,10 @@ class WorkoutsFragment : Fragment() {
                         // Обновляем текст кнопки
                         binding.btnStartDay.text = "Start Day $currentDay"
 
-                        if (difficultyLevel != null) {
-                            loadWorkoutsForDifficulty(difficultyLevel)
+                        val workoutProgram = document.get("workoutProgram") as? Map<String, Any>
+                        if (workoutProgram != null) {
+                            // Загружаем тренировки из Firestore
+                            loadWorkoutsFromFirestore(workoutProgram)
                         }
                     }
                 }
@@ -64,25 +67,25 @@ class WorkoutsFragment : Fragment() {
         }
     }
 
-    private fun loadWorkoutsForDifficulty(difficultyLevel: String) {
-        val workoutData = loadWorkoutDataFromJson()
+    // Обработка данных программы тренировок из Firestore
+    private fun loadWorkoutsFromFirestore(workoutProgram: Map<String, Any>) {
+        val exercises = workoutProgram["exercises"] as? List<Map<String, Any>> ?: listOf()
 
-        // Получаем список всех дней и упражнений для выбранного уровня сложности
-        val days = workoutData?.workoutLevels
-            ?.firstOrNull { it.level == difficultyLevel }
-            ?.weeks?.flatMap { it.days }
-            ?: listOf()
-
+        // Получаем список всех дней и упражнений
         val dayExerciseItems = mutableListOf<DayExerciseItem>()
-
-        days.forEachIndexed { index, day ->
-            // Добавляем заголовок "Day X"
-            dayExerciseItems.add(DayExerciseItem.DayHeader("Day ${index + 1}"))
-
-            // Добавляем упражнения для этого дня
-            day.exercises.forEach { exercise ->
-                dayExerciseItems.add(DayExerciseItem.ExerciseItem(exercise))
+        exercises.forEachIndexed { index, exerciseData ->
+            val dayNumber = index / 3 + 1  // Например, если три упражнения на день
+            if (index % 3 == 0) {
+                // Добавляем заголовок "Day X"
+                dayExerciseItems.add(DayExerciseItem.DayHeader("Day $dayNumber"))
             }
+            val exerciseName = exerciseData["name"] as? String ?: ""
+            val sets = (exerciseData["sets"] as? Long)?.toInt() ?: 0
+            val reps = (exerciseData["reps"] as? Long)?.toInt()
+            val sec = (exerciseData["sec"] as? Long)?.toInt()
+
+            // Добавляем упражнение в список
+            dayExerciseItems.add(DayExerciseItem.ExerciseItem(Exercise(exerciseName, reps, sec, sets, ""))) // Пока пустой videoUrl
         }
 
         setupRecyclerView(dayExerciseItems)
@@ -94,26 +97,10 @@ class WorkoutsFragment : Fragment() {
     }
 
     private fun startWorkoutForDay(day: Int) {
-        // Здесь будет логика перехода на экран тренировки
+        // Переход к тренировочному процессу
         Toast.makeText(requireContext(), "Starting Day $day", Toast.LENGTH_SHORT).show()
 
-        // Переход на экран тренировки
-        // Мы можем создать новый фрагмент для отображения текущей тренировки
-        // Навигация на новый фрагмент
-    }
-
-    private fun loadWorkoutDataFromJson(): WorkoutData? {
-        return try {
-            val inputStream = requireContext().resources.openRawResource(R.raw.workout_data)
-            val reader = InputStreamReader(inputStream)
-
-            val gson = Gson()
-            val workoutDataType = object : TypeToken<WorkoutData>() {}.type
-            gson.fromJson(reader, workoutDataType)
-        } catch (e: IOException) {
-            Log.e("WorkoutsFragment", "Error loading workout data: ${e.message}")
-            null
-        }
+        // Логика перехода на следующий фрагмент с первым упражнением
     }
 
     private fun setupRecyclerView(dayExerciseItems: List<DayExerciseItem>) {
