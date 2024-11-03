@@ -73,8 +73,8 @@ class WorkoutsFragment : Fragment() {
         // Получаем список всех дней и упражнений
         val dayExerciseItems = mutableListOf<DayExerciseItem>()
         exercises.forEachIndexed { index, exerciseData ->
-            val dayNumber = index / 3 + 1  // Например, если три упражнения на день
-            if (index % 3 == 0) {
+            val dayNumber = index / 4 + 1  // Например, если три упражнения на день
+            if (index % 4 == 0) {
                 // Добавляем заголовок "Day X"
                 dayExerciseItems.add(DayExerciseItem.DayHeader("Day $dayNumber"))
             }
@@ -82,9 +82,12 @@ class WorkoutsFragment : Fragment() {
             val sets = (exerciseData["sets"] as? Long)?.toInt() ?: 0
             val reps = (exerciseData["reps"] as? Long)?.toInt()
             val sec = (exerciseData["sec"] as? Long)?.toInt()
+            val videoUrl =(exerciseData["videoUrl"] as? String)?.toString()
 
             // Добавляем упражнение в список
-            dayExerciseItems.add(DayExerciseItem.ExerciseItem(Exercise(exerciseName, reps, sec, sets, ""))) // Пока пустой videoUrl
+            dayExerciseItems.add(DayExerciseItem.ExerciseItem(Exercise(exerciseName, reps, sec, sets,
+                videoUrl.toString()
+            ))) // Пока пустой videoUrl
         }
 
         setupRecyclerView(dayExerciseItems)

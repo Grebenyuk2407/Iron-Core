@@ -49,12 +49,12 @@ class ExerciseFragment : Fragment() {
         binding.exerciseSetsReps.text = "Sets: ${exercise.sets}, Reps: ${exercise.reps ?: 0}, Sec: ${exercise.sec ?: 0}"
 
         // Инициализация YouTube плеера для видео
-        lifecycle.addObserver(binding.youtubePlayerView)
+        lifecycle.addObserver(binding.youtubePlayerView) // Связываем с жизненным циклом
         binding.youtubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(youTubePlayer: YouTubePlayer) {
                 val videoUrl = extractYouTubeId(exercise.videoUrl)
                 if (videoUrl != null) {
-                    youTubePlayer.loadVideo(videoUrl, 0f)
+                    youTubePlayer.loadVideo(videoUrl, 0f) // Загружаем видео
                 }
             }
         })
@@ -81,7 +81,7 @@ class ExerciseFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        binding.youtubePlayerView.release()
+        binding.youtubePlayerView.release() // Освобождаем плеер
     }
 }
 

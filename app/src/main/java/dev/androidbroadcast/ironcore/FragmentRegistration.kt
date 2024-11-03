@@ -107,7 +107,8 @@ class FragmentRegistration : Fragment() {
                             "name" to exercise.name,
                             "sets" to exercise.sets,
                             "reps" to exercise.reps,
-                            "sec" to exercise.sec
+                            "sec" to exercise.sec,
+                            "videoUrl" to exercise.videoUrl
 
                         )
                     }
