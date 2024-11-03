@@ -1,5 +1,8 @@
 package dev.androidbroadcast.ironcore
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
 data class WorkoutData(
     val workoutLevels: List<WorkoutLevel>
 )
@@ -19,10 +22,11 @@ data class Day(
     val exercises: List<Exercise>
 )
 
+@Parcelize
 data class Exercise(
     val name: String,
     val reps: Int?,
     val sec: Int?,
     val sets: Int,
     val videoUrl: String
-)
+):Parcelable

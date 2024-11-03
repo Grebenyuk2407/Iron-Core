@@ -17,6 +17,12 @@
     </fragment>
 
     <fragment
+        android:id="@+id/fragmentExercise"
+        android:name="dev.androidbroadcast.ironcore.ExerciseFragment">
+
+    </fragment>
+
+    <fragment
         android:id="@+id/fragmentRegistration"
         android:name="dev.androidbroadcast.ironcore.FragmentRegistration"
         android:label="Registration">
@@ -33,7 +39,11 @@
     <fragment
         android:id="@+id/nav_workouts"
         android:name="dev.androidbroadcast.ironcore.WorkoutsFragment"
-        android:label="Workouts" />
+        android:label="Workouts">
+        <action
+            android:id="@+id/action_workout_list_to_exercise"
+            app:destination="@id/fragmentExercise" />
+    </fragment>
     <fragment
         android:id="@+id/nav_profile"
         android:name="dev.androidbroadcast.ironcore.ProfileFragment"

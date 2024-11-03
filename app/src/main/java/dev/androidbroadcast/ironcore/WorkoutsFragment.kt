@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -40,7 +41,6 @@ class WorkoutsFragment : Fragment() {
         loadUserProgressAndWorkoutData()
     }
 
-    // Загружаем уровень сложности, прогресс и программу тренировок из Firestore
     private fun loadUserProgressAndWorkoutData() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         userId?.let {
@@ -67,7 +67,6 @@ class WorkoutsFragment : Fragment() {
         }
     }
 
-    // Обработка данных программы тренировок из Firestore
     private fun loadWorkoutsFromFirestore(workoutProgram: Map<String, Any>) {
         val exercises = workoutProgram["exercises"] as? List<Map<String, Any>> ?: listOf()
 
@@ -92,15 +91,22 @@ class WorkoutsFragment : Fragment() {
 
         // Настраиваем клик по кнопке Start
         binding.btnStartDay.setOnClickListener {
-            startWorkoutForDay(currentDay)
+            startWorkoutForDay(currentDay, dayExerciseItems)
         }
     }
 
-    private fun startWorkoutForDay(day: Int) {
-        // Переход к тренировочному процессу
-        Toast.makeText(requireContext(), "Starting Day $day", Toast.LENGTH_SHORT).show()
+    private fun startWorkoutForDay(day: Int, dayExerciseItems: List<DayExerciseItem>) {
+        // Получаем список упражнений для текущего дня
+        val exercisesForDay = dayExerciseItems.filterIsInstance<DayExerciseItem.ExerciseItem>()
+            .map { it.exercise }
 
-        // Логика перехода на следующий фрагмент с первым упражнением
+        // Передаем данные упражнения в ExerciseFragment
+        val bundle = Bundle().apply {
+            putParcelableArrayList("exercises", ArrayList(exercisesForDay))
+            putInt("day", day)
+        }
+
+        findNavController().navigate(R.id.action_workout_list_to_exercise, bundle)
     }
 
     private fun setupRecyclerView(dayExerciseItems: List<DayExerciseItem>) {
@@ -111,5 +117,6 @@ class WorkoutsFragment : Fragment() {
         }
     }
 }
+
 
 
