@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerCallback
 import dev.androidbroadcast.ironcore.databinding.ExerciseFragmentBinding
 import java.util.regex.Pattern
 
@@ -48,17 +48,17 @@ class ExerciseFragment : Fragment() {
         binding.exerciseName.text = exercise.name
         binding.exerciseSetsReps.text = "Sets: ${exercise.sets}, Reps: ${exercise.reps ?: 0}, Sec: ${exercise.sec ?: 0}"
 
-        // Инициализация YouTube плеера для видео
-        lifecycle.addObserver(binding.youtubePlayerView) // Связываем с жизненным циклом
-        binding.youtubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
-            override fun onReady(youTubePlayer: YouTubePlayer) {
+        // Очистка текущего YouTube плеера перед загрузкой нового видео
+        binding.youtubePlayerView.getYouTubePlayerWhenReady(object : YouTubePlayerCallback {
+            override fun onYouTubePlayer(youTubePlayer: YouTubePlayer) {
                 val videoUrl = extractYouTubeId(exercise.videoUrl)
                 if (videoUrl != null) {
-                    youTubePlayer.loadVideo(videoUrl, 0f) // Загружаем видео
+                    youTubePlayer.cueVideo(videoUrl, 0f) // cueVideo загружает видео, но не воспроизводит автоматически
                 }
             }
         })
     }
+
 
     private fun startExercise(index: Int) {
         Toast.makeText(requireContext(), "Starting exercise: ${exercises[index].name}", Toast.LENGTH_SHORT).show()
