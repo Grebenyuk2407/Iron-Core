@@ -67,5 +67,17 @@ dependencies {
     implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:11.0.1")
 
 
+    val camerax_version = "1.2.0"
+    implementation ("androidx.camera:camera-core:$camerax_version")
+    implementation ("androidx.camera:camera-camera2:$camerax_version")
+    implementation ("androidx.camera:camera-lifecycle:$camerax_version")
+    implementation ("androidx.camera:camera-view:1.0.0-alpha32")
+    implementation ("androidx.camera:camera-extensions:$camerax_version")
+
+    implementation (libs.pose.detection)
+    implementation ("com.google.mlkit:pose-detection-accurate:17.0.0")
+
+
+
 
 }
