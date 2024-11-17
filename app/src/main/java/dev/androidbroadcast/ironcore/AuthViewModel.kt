@@ -42,7 +42,19 @@ class AuthViewModel @Inject constructor(
 
                 // Сохранение состояния "Запомнить меня"
                 val sharedPreferences = context.getSharedPreferences("login_prefs", Context.MODE_PRIVATE)
-                sharedPreferences.edit().putBoolean("rememberMe", rememberMe).apply()
+                val editor = sharedPreferences.edit()
+
+                if (rememberMe) {
+                    editor.putBoolean("rememberMe", true)
+                    editor.putString("email", email)
+                    editor.putString("password", password)
+                } else {
+                    editor.putBoolean("rememberMe", false)
+                    editor.remove("email")
+                    editor.remove("password")
+                }
+
+                editor.apply()
 
             } catch (e: Exception) {
                 _errorMessage.value = e.message ?: "Login failed"
@@ -50,6 +62,7 @@ class AuthViewModel @Inject constructor(
             }
         }
     }
+
 
     fun register(email: String, password: String, userName: String, difficultyLevel: String) {
         viewModelScope.launch {

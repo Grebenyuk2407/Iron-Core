@@ -29,6 +29,20 @@ class FragmentLogin : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Загрузка данных из SharedPreferences
+        val sharedPreferences = requireContext().getSharedPreferences("login_prefs", Context.MODE_PRIVATE)
+        val rememberMe = sharedPreferences.getBoolean("rememberMe", false)
+
+        if (rememberMe) {
+            val savedEmail = sharedPreferences.getString("email", "")
+            val savedPassword = sharedPreferences.getString("password", "")
+
+            // Если данные для входа сохранены, автоматически логиним пользователя
+            if (!savedEmail.isNullOrEmpty() && !savedPassword.isNullOrEmpty()) {
+                authViewModel.login(savedEmail, savedPassword, true)
+            }
+        }
+
         authViewModel.loginState.observe(viewLifecycleOwner) { isSuccess ->
             if (isSuccess) {
                 findNavController().navigate(R.id.action_login_to_profile)
@@ -41,6 +55,7 @@ class FragmentLogin : Fragment() {
             }
         }
 
+        // Обработка нажатия на кнопку "Login"
         binding.btnLogin.setOnClickListener {
             val email = binding.etEmailLogin.text.toString()
             val password = binding.etPasswordLogin.text.toString()
@@ -56,5 +71,7 @@ class FragmentLogin : Fragment() {
             findNavController().navigate(R.id.action_login_to_registration)
         }
     }
+
+
 }
 
