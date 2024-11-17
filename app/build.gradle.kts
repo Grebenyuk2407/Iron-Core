@@ -3,6 +3,9 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.google.gms.google.services)
     id("kotlin-parcelize")
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+
 }
 
 android {
@@ -77,7 +80,11 @@ dependencies {
     implementation (libs.pose.detection)
     implementation ("com.google.mlkit:pose-detection-accurate:17.0.0")
 
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
 
+}
 
-
+kapt {
+    correctErrorTypes = true
 }

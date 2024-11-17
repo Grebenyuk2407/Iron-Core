@@ -8,60 +8,47 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
+import dagger.hilt.android.AndroidEntryPoint
 import dev.androidbroadcast.ironcore.databinding.FragmentLoginBinding
 
+@AndroidEntryPoint
 class FragmentLogin : Fragment() {
 
-    private var _binding: FragmentLoginBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentLoginBinding
+    private val authViewModel: AuthViewModel by viewModels()
 
-    private lateinit var auth: FirebaseAuth
-    private lateinit var sharedPreferences: SharedPreferences
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState) // Добавляем savedInstanceState
+        super.onViewCreated(view, savedInstanceState)
 
-        auth = FirebaseAuth.getInstance()
-        sharedPreferences = requireActivity().getSharedPreferences("login_prefs", Context.MODE_PRIVATE)
+        authViewModel.loginState.observe(viewLifecycleOwner) { isSuccess ->
+            if (isSuccess) {
+                findNavController().navigate(R.id.action_login_to_profile)
+            }
+        }
 
-        // Проверка статуса "Запомнить меня" при запуске
-        if (sharedPreferences.getBoolean("rememberMe", false)) {
-            findNavController().navigate(R.id.action_login_to_profile)
+        authViewModel.errorMessage.observe(viewLifecycleOwner) { message ->
+            message?.let {
+                Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+            }
         }
 
         binding.btnLogin.setOnClickListener {
             val email = binding.etEmailLogin.text.toString()
             val password = binding.etPasswordLogin.text.toString()
-
+            val rememberMe = binding.chkRememberMe.isChecked
             if (email.isNotEmpty() && password.isNotEmpty()) {
-                auth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener { task ->
-                        if (task.isSuccessful) {
-                            // Если логин успешный и галочка "Запомнить меня" выбрана
-                            if (binding.chkRememberMe.isChecked) {
-                                saveLoginState(true) // Сохраняем статус логина
-                            } else {
-                                saveLoginState(false) // Сбрасываем статус логина
-                            }
-                            Toast.makeText(context, "Login successful!", Toast.LENGTH_SHORT).show()
-                            findNavController().navigate(R.id.action_login_to_profile)
-                        } else {
-                            Toast.makeText(context, "Login failed: ${task.exception?.message}", Toast.LENGTH_LONG).show()
-                        }
-                    }
+                authViewModel.login(email, password, rememberMe)
             } else {
-                Toast.makeText(context, "Please fill in both fields", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Please fill in both fields", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -69,16 +56,5 @@ class FragmentLogin : Fragment() {
             findNavController().navigate(R.id.action_login_to_registration)
         }
     }
-
-
-    private fun saveLoginState(isRemembered: Boolean) {
-        val editor = sharedPreferences.edit()
-        editor.putBoolean("rememberMe", isRemembered)
-        editor.apply()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }
+
