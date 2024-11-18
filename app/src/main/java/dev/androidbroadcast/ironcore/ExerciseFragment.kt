@@ -10,9 +10,11 @@ import androidx.fragment.app.Fragment
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerCallback
+import dagger.hilt.android.AndroidEntryPoint
 import dev.androidbroadcast.ironcore.databinding.ExerciseFragmentBinding
 import java.util.regex.Pattern
 
+@AndroidEntryPoint
 class ExerciseFragment : Fragment() {
 
     private lateinit var binding: ExerciseFragmentBinding
@@ -45,8 +47,11 @@ class ExerciseFragment : Fragment() {
 
     private fun showExercise(index: Int) {
         val exercise = exercises[index]
+
+        // Установка данных упражнения
         binding.exerciseName.text = exercise.name
-        binding.exerciseSetsReps.text = "Sets: ${exercise.sets}, Reps: ${exercise.reps ?: 0}, Sec: ${exercise.sec ?: 0}"
+        binding.tvSets.text = "Sets: ${exercise.sets}"
+        binding.tvReps.text = "Reps: ${exercise.reps ?: 0}" // Вывод количества повторений
 
         // Очистка текущего YouTube плеера перед загрузкой нового видео
         binding.youtubePlayerView.getYouTubePlayerWhenReady(object : YouTubePlayerCallback {
@@ -59,11 +64,13 @@ class ExerciseFragment : Fragment() {
         })
     }
 
-
     private fun startExercise(index: Int) {
         Toast.makeText(requireContext(), "Starting exercise: ${exercises[index].name}", Toast.LENGTH_SHORT).show()
 
-        // Переход к следующему упражнению или таймеру для отдыха
+        // Здесь должен быть переход на новый фрагмент с камерой
+        // Например, findNavController().navigate(R.id.action_exerciseFragment_to_exerciseCameraFragment)
+
+        // После выполнения упражнения или всех подходов можно переходить к следующему упражнению
         if (index < exercises.size - 1) {
             currentExerciseIndex++
             showExercise(currentExerciseIndex)
@@ -84,4 +91,5 @@ class ExerciseFragment : Fragment() {
         binding.youtubePlayerView.release() // Освобождаем плеер
     }
 }
+
 
