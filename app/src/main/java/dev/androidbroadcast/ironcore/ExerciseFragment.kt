@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerCallback
@@ -34,7 +35,6 @@ class ExerciseFragment : Fragment() {
 
         // Получаем список упражнений, переданных из WorkoutsFragment
         exercises = arguments?.getParcelableArrayList<Parcelable>("exercises")?.map { it as Exercise } ?: listOf()
-        val day = arguments?.getInt("day") ?: 1
 
         // Показываем первое упражнение
         showExercise(currentExerciseIndex)
@@ -51,14 +51,14 @@ class ExerciseFragment : Fragment() {
         // Установка данных упражнения
         binding.exerciseName.text = exercise.name
         binding.tvSets.text = "Sets: ${exercise.sets}"
-        binding.tvReps.text = "Reps: ${exercise.reps ?: 0}" // Вывод количества повторений
+        binding.tvReps.text = "Reps: ${exercise.reps ?: 0}"
 
         // Очистка текущего YouTube плеера перед загрузкой нового видео
         binding.youtubePlayerView.getYouTubePlayerWhenReady(object : YouTubePlayerCallback {
             override fun onYouTubePlayer(youTubePlayer: YouTubePlayer) {
                 val videoUrl = extractYouTubeId(exercise.videoUrl)
                 if (videoUrl != null) {
-                    youTubePlayer.cueVideo(videoUrl, 0f) // cueVideo загружает видео, но не воспроизводит автоматически
+                    youTubePlayer.cueVideo(videoUrl, 0f)
                 }
             }
         })
@@ -67,17 +67,16 @@ class ExerciseFragment : Fragment() {
     private fun startExercise(index: Int) {
         Toast.makeText(requireContext(), "Starting exercise: ${exercises[index].name}", Toast.LENGTH_SHORT).show()
 
-        // Здесь должен быть переход на новый фрагмент с камерой
-        // Например, findNavController().navigate(R.id.action_exerciseFragment_to_exerciseCameraFragment)
-
-        // После выполнения упражнения или всех подходов можно переходить к следующему упражнению
-        if (index < exercises.size - 1) {
-            currentExerciseIndex++
-            showExercise(currentExerciseIndex)
-        } else {
-            Toast.makeText(requireContext(), "You have completed all exercises for today!", Toast.LENGTH_SHORT).show()
+        // Создание Bundle для передачи данных
+        val bundle = Bundle().apply {
+            putParcelable("exercise", exercises[index]) // Передача выбранного упражнения
         }
+
+        // Переход на ExerciseCameraFragment с передачей данных
+        findNavController().navigate(R.id.action_exerciseFragment_to_exerciseCameraFragment, bundle)
     }
+
+
 
     private fun extractYouTubeId(url: String): String? {
         val regex = "(?:youtube(?:-nocookie)?\\.com/(?:[^/\\n\\s]+/\\S+/|(?:v|e(?:mbed)?)|.*[?&]v=)|youtu\\.be/)([a-zA-Z0-9_-]{11})"
@@ -88,8 +87,9 @@ class ExerciseFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        binding.youtubePlayerView.release() // Освобождаем плеер
+        binding.youtubePlayerView.release()
     }
 }
+
 
 

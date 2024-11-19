@@ -20,4 +20,9 @@ object AppModule {
     fun provideFirebaseFirestore(): FirebaseFirestore {
         return FirebaseFirestore.getInstance()
     }
+
+    @Provides
+    fun provideExerciseAnalyzer(): ExerciseAnalyzer {
+        return ExerciseAnalyzer()
+    }
 }

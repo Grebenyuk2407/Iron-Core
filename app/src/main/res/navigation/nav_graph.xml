@@ -17,9 +17,29 @@
     </fragment>
 
     <fragment
+        android:id="@+id/exerciseCameraFragment"
+        android:name="dev.androidbroadcast.ironcore.ExerciseCameraFragment"
+        android:label="ExerciseCameraFragment" >
+        <action
+            android:id="@+id/action_exerciseCamera_to_restFragment"
+            app:destination="@id/restFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/restFragment"
+        android:name="dev.androidbroadcast.ironcore.RestFragment"
+        android:label="RestFragment" >
+        <action
+            android:id="@+id/action_restFragment_to_exerciseCameraFragment"
+            app:destination="@id/exerciseCameraFragment" />
+    </fragment>
+
+    <fragment
         android:id="@+id/fragmentExercise"
         android:name="dev.androidbroadcast.ironcore.ExerciseFragment">
-
+        <action
+            android:id="@+id/action_exerciseFragment_to_exerciseCameraFragment"
+            app:destination="@id/exerciseCameraFragment" />
     </fragment>
 
     <fragment
@@ -30,7 +50,6 @@
             android:id="@+id/action_registration_to_profile"
             app:destination="@+id/nav_profile" />
     </fragment>
-
 
     <fragment
         android:id="@+id/nav_settings"
@@ -51,7 +70,6 @@
         <action
             android:id="@+id/action_profile_to_login"
             app:destination="@+id/fragmentLogin" />
-
     </fragment>
 
     <action

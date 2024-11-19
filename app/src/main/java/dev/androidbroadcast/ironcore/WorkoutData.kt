@@ -28,5 +28,7 @@ data class Exercise(
     val reps: Int?,
     val sec: Int?,
     val sets: Int,
-    val videoUrl: String
+    val videoUrl: String,
+    var currentSet: Int = 0, // Текущий подход
+    var currentReps: Int = 0 // Текущие повторения
 ):Parcelable
