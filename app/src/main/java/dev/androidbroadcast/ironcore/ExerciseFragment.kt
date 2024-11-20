@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
@@ -19,6 +20,7 @@ import java.util.regex.Pattern
 class ExerciseFragment : Fragment() {
 
     private lateinit var binding: ExerciseFragmentBinding
+    private val exerciseViewModel: ExerciseViewModel by activityViewModels() // Общая ViewModel
     private lateinit var exercises: List<Exercise>
     private var currentExerciseIndex = 0
 
@@ -41,7 +43,9 @@ class ExerciseFragment : Fragment() {
 
         // Обработка нажатия на кнопку Start для начала выполнения упражнения
         binding.btnStartExercise.setOnClickListener {
-            startExercise(currentExerciseIndex)
+            val currentExercise = exercises[currentExerciseIndex]
+            exerciseViewModel.setCurrentExercise(currentExercise)
+            findNavController().navigate(R.id.action_exerciseFragment_to_exerciseCameraFragment)
         }
     }
 
@@ -64,17 +68,6 @@ class ExerciseFragment : Fragment() {
         })
     }
 
-    private fun startExercise(index: Int) {
-        Toast.makeText(requireContext(), "Starting exercise: ${exercises[index].name}", Toast.LENGTH_SHORT).show()
-
-        // Создание Bundle для передачи данных
-        val bundle = Bundle().apply {
-            putParcelable("exercise", exercises[index]) // Передача выбранного упражнения
-        }
-
-        // Переход на ExerciseCameraFragment с передачей данных
-        findNavController().navigate(R.id.action_exerciseFragment_to_exerciseCameraFragment, bundle)
-    }
 
 
 

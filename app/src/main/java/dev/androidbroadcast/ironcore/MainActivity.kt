@@ -20,7 +20,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,14 +34,26 @@ class MainActivity : AppCompatActivity() {
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
         bottomNav.setupWithNavController(navController)
 
-        // Если нужно, обработай навигацию по фрагментам и настроить возвращение в предыдущие экраны.
+        // Скрытие/показ BottomNavigationView в зависимости от текущего фрагмента
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.fragmentLogin || destination.id == R.id.fragmentRegistration) {
-                bottomNav.visibility = View.GONE // Скрываем нижнее меню на экранах входа и регистрации
+            if (destination.id == R.id.fragmentLogin ||
+                destination.id == R.id.fragmentRegistration ||
+                destination.id == R.id.exerciseCameraFragment) {
+                bottomNav.visibility = View.GONE // Скрываем меню
             } else {
-                bottomNav.visibility = View.VISIBLE // Показываем меню на других экранах
+                bottomNav.visibility = View.VISIBLE // Показываем меню
             }
         }
     }
+
+    // Функции для явного управления видимостью BottomNavigationView
+    fun hideBottomNavigation() {
+        findViewById<BottomNavigationView>(R.id.bottom_navigation_view)?.visibility = View.GONE
+    }
+
+    fun showBottomNavigation() {
+        findViewById<BottomNavigationView>(R.id.bottom_navigation_view)?.visibility = View.VISIBLE
+    }
 }
+
 

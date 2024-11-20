@@ -21,27 +21,26 @@ class ExerciseViewModel @Inject constructor(
     private val _repsCount = MutableLiveData<Int>()
     val repsCount: LiveData<Int> = _repsCount
 
-    // Метод для обработки данных с камеры
+    // Обработка данных с камеры
     fun processPose(pose: Pose) {
         val currentExercise = _currentExercise.value ?: return
         val currentExerciseName = currentExercise.name
 
         val isSetCompleted = exerciseAnalyzer.analyzePose(pose, currentExerciseName)
         if (isSetCompleted) {
-            // Увеличиваем текущий подход
             currentExercise.currentSet += 1
             _setCompleted.value = true
         }
 
-        // Обновляем количество повторений для текущего упражнения
         val currentReps = exerciseAnalyzer.getRepsForExercise(currentExerciseName)
         currentExercise.currentReps = currentReps
         _currentExercise.value = currentExercise
     }
 
-    // Установка текущего упражнения (логика переключения упражнений/подходов)
+    // Установка текущего упражнения
     fun setCurrentExercise(exercise: Exercise) {
         _currentExercise.value = exercise
     }
 }
+
 
