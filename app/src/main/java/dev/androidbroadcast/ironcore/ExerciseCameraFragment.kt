@@ -55,10 +55,12 @@ class ExerciseCameraFragment : Fragment() {
 
         // Проверка разрешений на камеру
         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            // Запрашиваем разрешение
-            ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.CAMERA), CAMERA_PERMISSION_REQUEST_CODE)
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(Manifest.permission.CAMERA),
+                CAMERA_PERMISSION_REQUEST_CODE
+            )
         } else {
-            // Если разрешение уже есть, запускаем камеру
             startCamera()
         }
 
@@ -72,7 +74,6 @@ class ExerciseCameraFragment : Fragment() {
         // Слушаем завершение подхода
         exerciseViewModel.setCompleted.observe(viewLifecycleOwner) { setCompleted ->
             if (setCompleted) {
-                // Переходим на RestFragment для таймера
                 findNavController().navigate(R.id.action_exerciseCamera_to_restFragment)
             }
         }
@@ -81,30 +82,37 @@ class ExerciseCameraFragment : Fragment() {
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(requireContext())
         cameraProviderFuture.addListener({
-            cameraProvider = cameraProviderFuture.get()
-
-            // Настроить Preview и ImageAnalyzer (как в вашем коде)
-            val preview = Preview.Builder().build().also {
-                it.setSurfaceProvider(binding.cameraPreviewView.surfaceProvider)
-            }
-
-            val imageAnalyzer = ImageAnalysis.Builder().build().also {
-                it.setAnalyzer(Executors.newSingleThreadExecutor()) { imageProxy ->
-                    analyzePoseFromImage(imageProxy) { poseResult ->
-                        // Логика подсчета повторений и подходов
-                        poseResult?.let { it1 -> exerciseViewModel.processPose(it1) }
-                    }
-                }
-            }
-
-            val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
             try {
+                cameraProvider = cameraProviderFuture.get()
+
+                // Настройка Preview
+                val preview = Preview.Builder().build().also {
+                    it.setSurfaceProvider(binding.cameraPreviewView.surfaceProvider)
+                }
+
+                // Настройка ImageAnalyzer
+                val rotation = binding.cameraPreviewView.display?.rotation ?: Surface.ROTATION_0
+                val imageAnalyzer = ImageAnalysis.Builder()
+                    .setTargetRotation(rotation)
+                    .build()
+                    .also {
+                        it.setAnalyzer(Executors.newSingleThreadExecutor()) { imageProxy ->
+                            analyzePoseFromImage(imageProxy) { poseResult ->
+                                poseResult?.let { pose -> exerciseViewModel.processPose(pose) }
+                            }
+                        }
+                    }
+
+                val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
+
                 cameraProvider.unbindAll()
                 cameraProvider.bindToLifecycle(
                     this, cameraSelector, preview, imageAnalyzer
                 )
-            } catch (e: Exception) {
-                Log.e("ExerciseCameraFragment", "Camera binding failed", e)
+            } catch (e: IllegalStateException) {
+                Log.e("ExerciseCameraFragment", "Camera initialization failed: ${e.message}", e)
+            } catch (e: IllegalArgumentException) {
+                Log.e("ExerciseCameraFragment", "Invalid argument: ${e.message}", e)
             }
         }, ContextCompat.getMainExecutor(requireContext()))
     }
@@ -115,10 +123,8 @@ class ExerciseCameraFragment : Fragment() {
         when (requestCode) {
             CAMERA_PERMISSION_REQUEST_CODE -> {
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // Разрешение получено, запускаем камеру
                     startCamera()
                 } else {
-                    // Разрешение не получено, показываем сообщение
                     Toast.makeText(requireContext(), "Camera permission is required", Toast.LENGTH_SHORT).show()
                 }
             }
@@ -131,12 +137,10 @@ class ExerciseCameraFragment : Fragment() {
         val rotationDegrees = imageProxy.imageInfo.rotationDegrees
         val image = InputImage.fromMediaImage(mediaImage, rotationDegrees)
 
-        // Обрабатываем изображение с помощью детектора поз
         poseDetector.process(image)
             .addOnSuccessListener { pose ->
-                // Возвращаем результат через callback
                 callback(pose)
-                imageProxy.close() // Не забываем закрывать imageProxy после использования
+                imageProxy.close() // Закрываем imageProxy после использования
             }
             .addOnFailureListener { e ->
                 Log.e("ExerciseCameraFragment", "Pose detection failed", e)
@@ -148,10 +152,10 @@ class ExerciseCameraFragment : Fragment() {
     // Создание детектора поз
     private val poseDetector: PoseDetector by lazy {
         val options = PoseDetectorOptions.Builder()
-            .setDetectorMode(PoseDetectorOptions.STREAM_MODE) // STREAM_MODE для анализа в реальном времени
+            .setDetectorMode(PoseDetectorOptions.STREAM_MODE)
             .build()
-
         PoseDetection.getClient(options)
     }
 }
+
 
