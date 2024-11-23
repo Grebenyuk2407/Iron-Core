@@ -50,14 +50,23 @@ class ExerciseCameraFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Отображаем информацию о текущем упражнении
         exerciseViewModel.currentExercise.observe(viewLifecycleOwner) { exercise ->
             if (exercise != null) {
                 binding.tvExerciseName.text = exercise.name
                 binding.tvSetProgress.text = "Set: ${exercise.currentSet}/${exercise.sets}"
-                binding.tvRepsProgress.text = "Reps: ${exercise.currentReps}/${exercise.reps}"
+                binding.tvRepsProgress.text = "Reps: 0/${exercise.reps}"
             }
         }
 
+        // Обновляем количество повторений на UI
+        exerciseViewModel.repsCount.observe(viewLifecycleOwner) { reps ->
+            exerciseViewModel.currentExercise.value?.let { exercise ->
+                binding.tvRepsProgress.text = "Reps: $reps/${exercise.reps}"
+            }
+        }
+
+        // Если подход завершен, переходим к следующему экрану
         exerciseViewModel.setCompleted.observe(viewLifecycleOwner) { setCompleted ->
             if (setCompleted) {
                 findNavController().navigate(R.id.action_exerciseCamera_to_restFragment)
