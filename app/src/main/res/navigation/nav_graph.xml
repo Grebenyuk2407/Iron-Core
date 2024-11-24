@@ -26,12 +26,24 @@
     </fragment>
 
     <fragment
+        android:id="@+id/workoutCompleteFragment"
+        android:name="dev.androidbroadcast.ironcore.WorkoutCompleteFragment"
+        android:label="WorkoutCompleteFragment" >
+    </fragment>
+
+    <fragment
         android:id="@+id/restFragment"
         android:name="dev.androidbroadcast.ironcore.RestFragment"
         android:label="RestFragment" >
         <action
             android:id="@+id/action_restFragment_to_exerciseCameraFragment"
             app:destination="@id/exerciseCameraFragment" />
+        <action
+            android:id="@+id/action_restFragment_to_exerciseFragment"
+            app:destination="@id/fragmentExercise" />
+        <action
+            android:id="@+id/action_restFragment_to_workoutCompletedFragment"
+            app:destination="@id/restFragment" />
     </fragment>
 
     <fragment

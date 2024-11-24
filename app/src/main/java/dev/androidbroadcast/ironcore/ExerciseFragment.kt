@@ -22,7 +22,6 @@ class ExerciseFragment : Fragment() {
     private lateinit var binding: ExerciseFragmentBinding
     private val exerciseViewModel: ExerciseViewModel by activityViewModels() // Общая ViewModel
     private lateinit var exercises: List<Exercise>
-    private var currentExerciseIndex = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,21 +37,29 @@ class ExerciseFragment : Fragment() {
         // Получаем список упражнений, переданных из WorkoutsFragment
         exercises = arguments?.getParcelableArrayList<Parcelable>("exercises")?.map { it as Exercise } ?: listOf()
 
-        // Показываем первое упражнение
-        showExercise(currentExerciseIndex)
+        // Устанавливаем список упражнений в ViewModel
+        exerciseViewModel.setExercises(exercises)
+
+        // Наблюдаем за текущим упражнением
+        exerciseViewModel.currentExercise.observe(viewLifecycleOwner) { exercise ->
+            updateUIForExercise(exercise)
+        }
+
+        // Наблюдаем за завершением тренировки
+        exerciseViewModel.workoutCompleted.observe(viewLifecycleOwner) { isCompleted ->
+            if (isCompleted) {
+                Toast.makeText(context, "Тренировка завершена!", Toast.LENGTH_SHORT).show()
+                // Здесь можно переходить на экран завершения тренировки или выводить диалог
+            }
+        }
 
         // Обработка нажатия на кнопку Start для начала выполнения упражнения
         binding.btnStartExercise.setOnClickListener {
-            val currentExercise = exercises[currentExerciseIndex]
-            exerciseViewModel.setCurrentExercise(currentExercise)
             findNavController().navigate(R.id.action_exerciseFragment_to_exerciseCameraFragment)
         }
     }
 
-    private fun showExercise(index: Int) {
-        val exercise = exercises[index]
-
-        // Установка данных упражнения
+    private fun updateUIForExercise(exercise: Exercise) {
         binding.exerciseName.text = exercise.name
         binding.tvSets.text = "Sets: ${exercise.sets}"
         binding.tvReps.text = "Reps: ${exercise.reps ?: 0}"
@@ -68,9 +75,6 @@ class ExerciseFragment : Fragment() {
         })
     }
 
-
-
-
     private fun extractYouTubeId(url: String): String? {
         val regex = "(?:youtube(?:-nocookie)?\\.com/(?:[^/\\n\\s]+/\\S+/|(?:v|e(?:mbed)?)|.*[?&]v=)|youtu\\.be/)([a-zA-Z0-9_-]{11})"
         val pattern = Pattern.compile(regex)
@@ -83,6 +87,7 @@ class ExerciseFragment : Fragment() {
         binding.youtubePlayerView.release()
     }
 }
+
 
 
 

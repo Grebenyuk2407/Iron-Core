@@ -21,8 +21,29 @@ class ExerciseViewModel @Inject constructor(
     private val _repsCount = MutableLiveData<Int>()
     val repsCount: LiveData<Int> = _repsCount
 
+    private val _workoutCompleted = MutableLiveData<Boolean>()  // Новый флаг завершения тренировки
+    val workoutCompleted: LiveData<Boolean> = _workoutCompleted
+
+    // Индекс текущего упражнения
+    private var currentExerciseIndex = 0
+
+    // Список упражнений
+    private lateinit var exercises: List<Exercise>
+
     // Счетчик для отслеживания выполненных повторений
     private var completedReps = 0
+
+    // Установка списка упражнений
+    fun setExercises(exerciseList: List<Exercise>) {
+        exercises = exerciseList
+        setCurrentExercise(exercises[0])  // Устанавливаем первое упражнение
+    }
+
+    // Установка текущего упражнения
+    private fun setCurrentExercise(exercise: Exercise) {
+        completedReps = 0 // Сбрасываем количество повторений при начале нового упражнения
+        _currentExercise.value = exercise
+    }
 
     // Обработка данных с камеры
     fun processPose(pose: Pose) {
@@ -44,15 +65,20 @@ class ExerciseViewModel @Inject constructor(
                 // Проверяем, завершены ли все подходы
                 if (currentExercise.currentSet > currentExercise.sets) {
                     _setCompleted.value = true
+                    moveToNextExercise()  // Переход к следующему упражнению
                 }
             }
         }
     }
 
-    // Установка текущего упражнения
-    fun setCurrentExercise(exercise: Exercise) {
-        completedReps = 0 // Сбрасываем количество повторений при начале нового упражнения
-        _currentExercise.value = exercise
+    // Переход к следующему упражнению
+    private fun moveToNextExercise() {
+        if (currentExerciseIndex < exercises.size - 1) {
+            currentExerciseIndex++
+            setCurrentExercise(exercises[currentExerciseIndex])
+        } else {
+            _workoutCompleted.value = true  // Все упражнения завершены
+        }
     }
 }
 

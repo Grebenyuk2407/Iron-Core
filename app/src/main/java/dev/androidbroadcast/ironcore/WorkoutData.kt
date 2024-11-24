@@ -30,5 +30,6 @@ data class Exercise(
     val sets: Int,
     val videoUrl: String,
     var currentSet: Int = 0, // Текущий подход
-    var currentReps: Int = 0 // Текущие повторения
+    var currentReps: Int = 0, // Текущие повторения
+    var isCompleted: Boolean = false
 ):Parcelable
