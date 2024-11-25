@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@color/white">
+
+    <!-- Заголовок -->
+    <TextView
+        android:id="@+id/tv_rest_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rest Time"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Текст с таймером -->
+    <TextView
+        android:id="@+id/tv_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="60"
+    android:textSize="48sp"
+    android:textColor="@color/black"
+    android:textStyle="bold"
+    android:gravity="center"
+    android:layout_marginBottom="24dp" />
+
+    <!-- Кнопка пропустить таймер (если нужно) -->
+    <Button
+        android:id="@+id/btn_skip_rest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skip"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        android:visibility="gone"/> <!-- Если не нужна, можно убрать эту кнопку -->
+
+</LinearLayout>

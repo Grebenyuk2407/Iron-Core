@@ -50,26 +50,36 @@ class ExerciseViewModel @Inject constructor(
         val currentExercise = _currentExercise.value ?: return
         val currentExerciseName = currentExercise.name
 
-        // Проверка, завершено ли одно повторение
         val isRepCompleted = exerciseAnalyzer.analyzePose(pose, currentExerciseName)
         if (isRepCompleted) {
             completedReps += 1
             _repsCount.value = completedReps
 
-            // Если выполнено нужное количество повторений, завершить подход
             if (completedReps >= currentExercise.reps ?: 0) {
                 completedReps = 0 // сбрасываем счетчик для следующего подхода
                 currentExercise.currentSet += 1
                 _currentExercise.value = currentExercise
 
-                // Проверяем, завершены ли все подходы
+                // Проверяем, завершены ли все подходы упражнения
                 if (currentExercise.currentSet > currentExercise.sets) {
                     _setCompleted.value = true
                     moveToNextExercise()  // Переход к следующему упражнению
+                } else {
+                    _setCompleted.value = true  // Только подход завершен
                 }
             }
         }
     }
+
+    fun startNewSet() {
+        completedReps = 0
+        _repsCount.value = completedReps
+    }
+
+    fun resetSetCompletionFlag() {
+        _setCompleted.value = false
+    }
+
 
     // Переход к следующему упражнению
     private fun moveToNextExercise() {

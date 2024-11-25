@@ -67,14 +67,22 @@ class ExerciseCameraFragment : Fragment() {
         }
 
         // Если подход завершен, переходим к следующему экрану
+        // Обработка завершения подхода
         exerciseViewModel.setCompleted.observe(viewLifecycleOwner) { setCompleted ->
             if (setCompleted) {
                 findNavController().navigate(R.id.action_exerciseCamera_to_restFragment)
+
+                // Сбрасываем флаг завершения подхода, чтобы после отдыха вернуться к следующему подходу
+                exerciseViewModel.startNewSet()
+                exerciseViewModel.resetSetCompletionFlag()
             }
         }
 
+
         startCamera()
     }
+
+
 
     override fun onResume() {
         super.onResume()
@@ -85,6 +93,8 @@ class ExerciseCameraFragment : Fragment() {
         super.onPause()
         (requireActivity() as MainActivity).showBottomNavigation()
     }
+
+
 
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(requireContext())
