@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
@@ -22,6 +23,7 @@ class WorkoutsFragment : Fragment() {
     private lateinit var binding: FragmentWorkoutBinding
     private lateinit var firestore: FirebaseFirestore
     private lateinit var workoutAdapter: WorkoutAdapter
+    private val exerciseViewModel: ExerciseViewModel by activityViewModels()
     private var currentDay: Int = 1 // Стартовый день 1
 
     override fun onCreateView(
@@ -103,13 +105,11 @@ class WorkoutsFragment : Fragment() {
         val exercisesForDay = dayExerciseItems.filterIsInstance<DayExerciseItem.ExerciseItem>()
             .map { it.exercise }
 
-        // Передаем данные упражнения в ExerciseFragment
-        val bundle = Bundle().apply {
-            putParcelableArrayList("exercises", ArrayList(exercisesForDay))
-            putInt("day", day)
-        }
+        // Устанавливаем упражнения в общий ViewModel
+        exerciseViewModel.setExercises(exercisesForDay)
 
-        findNavController().navigate(R.id.action_workout_list_to_exercise, bundle)
+        // Переходим на ExerciseFragment без передачи через Bundle
+        findNavController().navigate(R.id.action_workout_list_to_exercise)
     }
 
     private fun setupRecyclerView(dayExerciseItems: List<DayExerciseItem>) {

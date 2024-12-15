@@ -12,6 +12,9 @@ class ExerciseViewModel @Inject constructor(
     private val exerciseAnalyzer: ExerciseAnalyzer
 ) : ViewModel() {
 
+    private val _exercises = MutableLiveData<List<Exercise>>()
+    val exercises: LiveData<List<Exercise>> = _exercises
+
     private val _currentExercise = MutableLiveData<Exercise>()
     val currentExercise: LiveData<Exercise> = _currentExercise
 
@@ -25,20 +28,17 @@ class ExerciseViewModel @Inject constructor(
     val workoutCompleted: LiveData<Boolean> = _workoutCompleted
 
 
-    // Список упражнений
-    private lateinit var exercises: List<Exercise>
 
     // Счетчик для отслеживания выполненных повторений
     private var completedReps = 0
 
     // Установка списка упражнений
     fun setExercises(exerciseList: List<Exercise>) {
-        exercises = exerciseList
-        setCurrentExercise(exercises[0])  // Устанавливаем первое упражнение
+        _exercises.value = exerciseList
     }
 
     // Установка текущего упражнения
-    private fun setCurrentExercise(exercise: Exercise) {
+    fun setCurrentExercise(exercise: Exercise) {
         completedReps = 0 // Сбрасываем количество повторений при начале нового упражнения
         _currentExercise.value = exercise
     }

@@ -20,8 +20,7 @@ import java.util.regex.Pattern
 class ExerciseFragment : Fragment() {
 
     private lateinit var binding: ExerciseFragmentBinding
-    private val exerciseViewModel: ExerciseViewModel by activityViewModels() // Общая ViewModel
-    private lateinit var exercises: List<Exercise>
+    private val exerciseViewModel: ExerciseViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,15 +33,13 @@ class ExerciseFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Получаем список упражнений, переданных из WorkoutsFragment
-        exercises = arguments?.getParcelableArrayList<Parcelable>("exercises")?.map { it as Exercise } ?: listOf()
-
-        // Устанавливаем список упражнений в ViewModel
-        exerciseViewModel.setExercises(exercises)
-
-        // Наблюдаем за текущим упражнением
-        exerciseViewModel.currentExercise.observe(viewLifecycleOwner) { exercise ->
-            updateUIForExercise(exercise)
+        // Наблюдаем за упражнениями
+        exerciseViewModel.exercises.observe(viewLifecycleOwner) { exercises ->
+            // Проверяем, что список упражнений не пустой, и берем первое упражнение
+            if (exercises.isNotEmpty()) {
+                exerciseViewModel.setCurrentExercise(exercises[0])
+                updateUIForExercise(exercises[0]) // Берем первое упражнение для демонстрации
+            }
         }
 
         // Наблюдаем за завершением тренировки
@@ -60,6 +57,7 @@ class ExerciseFragment : Fragment() {
     }
 
     private fun updateUIForExercise(exercise: Exercise) {
+        // Обновляем UI для одного упражнения
         binding.exerciseName.text = exercise.name
         binding.tvSets.text = "Sets: ${exercise.sets}"
         binding.tvReps.text = "Reps: ${exercise.reps ?: 0}"
@@ -87,6 +85,7 @@ class ExerciseFragment : Fragment() {
         binding.youtubePlayerView.release()
     }
 }
+
 
 
 
