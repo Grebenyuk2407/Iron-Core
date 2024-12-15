@@ -19,7 +19,7 @@
     <fragment
         android:id="@+id/exerciseCameraFragment"
         android:name="dev.androidbroadcast.ironcore.ExerciseCameraFragment"
-        android:label="ExerciseCameraFragment" >
+        android:label="ExerciseCameraFragment">
         <action
             android:id="@+id/action_exerciseCamera_to_restFragment"
             app:destination="@id/restFragment" />
@@ -34,7 +34,7 @@
     <fragment
         android:id="@+id/restFragment"
         android:name="dev.androidbroadcast.ironcore.RestFragment"
-        android:label="RestFragment" >
+        android:label="RestFragment">
         <action
             android:id="@+id/action_restFragment_to_exerciseCameraFragment"
             app:destination="@id/exerciseCameraFragment" />
@@ -43,7 +43,7 @@
             app:destination="@id/fragmentExercise" />
         <action
             android:id="@+id/action_restFragment_to_workoutCompletedFragment"
-            app:destination="@id/restFragment" />
+            app:destination="@id/workoutCompleteFragment" />
     </fragment>
 
     <fragment
@@ -67,6 +67,7 @@
         android:id="@+id/nav_settings"
         android:name="dev.androidbroadcast.ironcore.SettingsFragment"
         android:label="Settings" />
+
     <fragment
         android:id="@+id/nav_workouts"
         android:name="dev.androidbroadcast.ironcore.WorkoutsFragment"
@@ -75,10 +76,11 @@
             android:id="@+id/action_workout_list_to_exercise"
             app:destination="@id/fragmentExercise" />
     </fragment>
+
     <fragment
         android:id="@+id/nav_profile"
         android:name="dev.androidbroadcast.ironcore.ProfileFragment"
-        android:label="Profile" >
+        android:label="Profile">
         <action
             android:id="@+id/action_profile_to_login"
             app:destination="@+id/fragmentLogin" />
@@ -88,3 +90,4 @@
         android:id="@+id/action_global_to_profile"
         app:destination="@+id/nav_profile" />
 </navigation>
+

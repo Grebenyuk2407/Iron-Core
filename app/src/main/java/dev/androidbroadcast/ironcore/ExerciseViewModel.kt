@@ -24,8 +24,6 @@ class ExerciseViewModel @Inject constructor(
     private val _workoutCompleted = MutableLiveData<Boolean>()  // Новый флаг завершения тренировки
     val workoutCompleted: LiveData<Boolean> = _workoutCompleted
 
-    // Индекс текущего упражнения
-    private var currentExerciseIndex = 0
 
     // Список упражнений
     private lateinit var exercises: List<Exercise>
@@ -56,20 +54,23 @@ class ExerciseViewModel @Inject constructor(
             _repsCount.value = completedReps
 
             if (completedReps >= currentExercise.reps ?: 0) {
-                completedReps = 0 // сбрасываем счетчик для следующего подхода
+                completedReps = 0 // Сбрасываем счетчик для следующего подхода
                 currentExercise.currentSet += 1
-                _currentExercise.value = currentExercise
 
-                // Проверяем, завершены ли все подходы упражнения
+                // Если завершены все подходы, отмечаем упражнение как завершенное
                 if (currentExercise.currentSet > currentExercise.sets) {
+                    currentExercise.isLastSetCompleted = true
+                    currentExercise.isCompleted = true
                     _setCompleted.value = true
-                    moveToNextExercise()  // Переход к следующему упражнению
                 } else {
-                    _setCompleted.value = true  // Только подход завершен
+                    _setCompleted.value = true // Подход завершен, но упражнение не закончено
                 }
+
+                _currentExercise.value = currentExercise
             }
         }
     }
+
 
     fun startNewSet() {
         completedReps = 0
@@ -80,16 +81,6 @@ class ExerciseViewModel @Inject constructor(
         _setCompleted.value = false
     }
 
-
-    // Переход к следующему упражнению
-    private fun moveToNextExercise() {
-        if (currentExerciseIndex < exercises.size - 1) {
-            currentExerciseIndex++
-            setCurrentExercise(exercises[currentExerciseIndex])
-        } else {
-            _workoutCompleted.value = true  // Все упражнения завершены
-        }
-    }
 }
 
 

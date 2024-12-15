@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import dev.androidbroadcast.ironcore.databinding.FragmentRestBinding
@@ -48,7 +49,7 @@ class RestFragment : Fragment() {
 
             override fun onFinish() {
                 // Когда таймер заканчивается, возвращаемся на ExerciseCameraFragment
-                navigateBackToExerciseCamera()
+                navigateBackToExerciseFragmentOrCamera()
             }
         }.start()
     }
@@ -56,13 +57,26 @@ class RestFragment : Fragment() {
     // Пропуск отдыха
     private fun skipRest() {
         countdownTimer?.cancel()
-        navigateBackToExerciseCamera()
+        navigateBackToExerciseFragmentOrCamera()
     }
 
     // Переход обратно на ExerciseCameraFragment
-    private fun navigateBackToExerciseCamera() {
-        findNavController().navigate(R.id.action_restFragment_to_exerciseCameraFragment)
+    private fun navigateBackToExerciseFragmentOrCamera() {
+        val viewModel: ExerciseViewModel by activityViewModels()
+
+        viewModel.currentExercise.observe(viewLifecycleOwner) { currentExercise ->
+            if (currentExercise.isLastSetCompleted) {
+                // Переходим на ExerciseFragment, если завершен последний подход
+                findNavController().navigate(R.id.action_restFragment_to_exerciseFragment)
+            } else {
+                // Переход на камеру для следующего подхода
+
+                findNavController().navigate(R.id.action_restFragment_to_exerciseCameraFragment)
+
+            }
+        }
     }
+
 
     // Форматирование времени в MM:SS
     private fun formatTime(seconds: Long): String {
