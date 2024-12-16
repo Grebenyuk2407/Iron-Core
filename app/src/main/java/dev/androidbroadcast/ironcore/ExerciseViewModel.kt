@@ -34,14 +34,52 @@ class ExerciseViewModel @Inject constructor(
 
     // Установка списка упражнений
     fun setExercises(exerciseList: List<Exercise>) {
+        // Сбрасываем флаг "текущего" для всех упражнений
+        exerciseList.forEach { it.isCurrent = false }
+
+        // Устанавливаем первое упражнение как текущее
+        if (exerciseList.isNotEmpty()) {
+            exerciseList[0].isCurrent = true
+            setCurrentExercise(exerciseList[0])
+        }
+
         _exercises.value = exerciseList
     }
+
 
     // Установка текущего упражнения
     fun setCurrentExercise(exercise: Exercise) {
         completedReps = 0 // Сбрасываем количество повторений при начале нового упражнения
         _currentExercise.value = exercise
     }
+
+    fun moveToNextExercise() {
+        val exercises = _exercises.value ?: return
+        val currentExercise = _currentExercise.value ?: return
+
+        // Найдем индекс текущего упражнения
+        val currentIndex = exercises.indexOf(currentExercise)
+
+        // Убедимся, что это не последнее упражнение
+        if (currentIndex != -1 && currentIndex < exercises.size - 1) {
+            // Снимаем флаг "текущее" с текущего упражнения
+            currentExercise.isCurrent = false
+
+            // Устанавливаем следующее упражнение как текущее
+            val nextExercise = exercises[currentIndex + 1]
+            nextExercise.isCurrent = true
+
+            // Обновляем текущий список упражнений
+            _exercises.value = exercises
+
+            // Устанавливаем новое текущее упражнение
+            setCurrentExercise(nextExercise)
+        } else {
+            // Все упражнения завершены
+            _workoutCompleted.value = true
+        }
+    }
+
 
     // Обработка данных с камеры
     fun processPose(pose: Pose) {
@@ -54,20 +92,23 @@ class ExerciseViewModel @Inject constructor(
             _repsCount.value = completedReps
 
             if (completedReps >= currentExercise.reps ?: 0) {
-                completedReps = 0 // Сбрасываем счетчик для следующего подхода
+                completedReps = 0
                 currentExercise.currentSet += 1
 
-                // Если завершены все подходы, отмечаем упражнение как завершенное
                 if (currentExercise.currentSet > currentExercise.sets) {
                     currentExercise.isLastSetCompleted = true
                     currentExercise.isCompleted = true
                     _setCompleted.value = true
+
+                    // Переход к следующему упражнению
+                    moveToNextExercise()
                 } else {
                     _setCompleted.value = true // Подход завершен, но упражнение не закончено
                 }
 
                 _currentExercise.value = currentExercise
             }
+
         }
     }
 

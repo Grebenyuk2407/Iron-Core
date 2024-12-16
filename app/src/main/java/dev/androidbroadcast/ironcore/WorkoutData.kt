@@ -32,5 +32,6 @@ data class Exercise(
     var currentSet: Int = 0,  // Текущий подход
     var currentReps: Int = 0,  // Текущие повторения
     var isCompleted: Boolean = false, // Завершено ли упражнение
-    var isLastSetCompleted: Boolean = false // Завершён ли последний подход
+    var isLastSetCompleted: Boolean = false, // Завершён ли последний подход
+    var isCurrent: Boolean = false
 ): Parcelable

@@ -35,12 +35,21 @@ class ExerciseFragment : Fragment() {
 
         // Наблюдаем за упражнениями
         exerciseViewModel.exercises.observe(viewLifecycleOwner) { exercises ->
-            // Проверяем, что список упражнений не пустой, и берем первое упражнение
-            if (exercises.isNotEmpty()) {
-                exerciseViewModel.setCurrentExercise(exercises[0])
-                updateUIForExercise(exercises[0]) // Берем первое упражнение для демонстрации
+            val currentExercise = exercises.find { it.isCurrent }
+
+            // Если нет текущего упражнения, выбираем первое незавершенное упражнение
+            if (currentExercise == null) {
+                val firstIncompleteExercise = exercises.find { !it.isCompleted }
+                if (firstIncompleteExercise != null) {
+                    exerciseViewModel.setCurrentExercise(firstIncompleteExercise)
+                    updateUIForExercise(firstIncompleteExercise)
+                }
+            } else {
+                exerciseViewModel.setCurrentExercise(currentExercise)
+                updateUIForExercise(currentExercise)
             }
         }
+
 
         // Наблюдаем за завершением тренировки
         exerciseViewModel.workoutCompleted.observe(viewLifecycleOwner) { isCompleted ->
