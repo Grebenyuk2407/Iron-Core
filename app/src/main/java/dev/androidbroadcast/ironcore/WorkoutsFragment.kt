@@ -101,16 +101,25 @@ class WorkoutsFragment : Fragment() {
     }
 
     private fun startWorkoutForDay(day: Int, dayExerciseItems: List<DayExerciseItem>) {
-        // Получаем список упражнений для текущего дня
-        val exercisesForDay = dayExerciseItems.filterIsInstance<DayExerciseItem.ExerciseItem>()
-            .map { it.exercise }
+        // Получаем список упражнений для конкретного дня
+        val exercisesForDay = dayExerciseItems
+            .filterIsInstance<DayExerciseItem.ExerciseItem>()
+            .mapIndexedNotNull { index, item ->
+                val dayNumber = index / 4 + 1
+                if (dayNumber == day) item.exercise else null
+            }
 
-        // Устанавливаем упражнения в общий ViewModel
-        exerciseViewModel.setExercises(exercisesForDay)
+        if (exercisesForDay.isNotEmpty()) {
+            // Устанавливаем упражнения в ViewModel для текущего дня
+            exerciseViewModel.setExercises(exercisesForDay)
 
-        // Переходим на ExerciseFragment без передачи через Bundle
-        findNavController().navigate(R.id.action_workout_list_to_exercise)
+            // Переход к экрану упражнений
+            findNavController().navigate(R.id.action_workout_list_to_exercise)
+        } else {
+            Toast.makeText(context, "Нет упражнений для текущего дня.", Toast.LENGTH_SHORT).show()
+        }
     }
+
 
     private fun setupRecyclerView(dayExerciseItems: List<DayExerciseItem>) {
         workoutAdapter = WorkoutAdapter(dayExerciseItems)
