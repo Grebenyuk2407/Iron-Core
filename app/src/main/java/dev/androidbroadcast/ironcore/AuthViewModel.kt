@@ -127,7 +127,8 @@ class AuthViewModel @Inject constructor(
             "email" to email,
             "difficultyLevel" to difficultyLevel,
             "username" to userName,
-            "workoutProgram" to workoutMap
+            "workoutProgram" to workoutMap,
+            "currentDay" to 1
         )
 
         firestore.collection("users").document(userId).set(userMap)

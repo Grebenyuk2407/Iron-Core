@@ -1,15 +1,20 @@
 package dev.androidbroadcast.ironcore
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.mlkit.vision.pose.Pose
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 class ExerciseViewModel @Inject constructor(
-    private val exerciseAnalyzer: ExerciseAnalyzer
+    private val exerciseAnalyzer: ExerciseAnalyzer,
+    private val firestore: FirebaseFirestore,  // Добавляем Firestore для сохранения данных
+    private val auth: FirebaseAuth  // Добавляем FirebaseAuth для получения текущего пользователя
 ) : ViewModel() {
 
     private val _exercises = MutableLiveData<List<Exercise>>()
@@ -24,20 +29,16 @@ class ExerciseViewModel @Inject constructor(
     private val _repsCount = MutableLiveData<Int>()
     val repsCount: LiveData<Int> = _repsCount
 
-    private val _workoutCompleted = MutableLiveData<Boolean>()  // Новый флаг завершения тренировки
+    private val _workoutCompleted = MutableLiveData<Boolean>()
     val workoutCompleted: LiveData<Boolean> = _workoutCompleted
-
-
 
     // Счетчик для отслеживания выполненных повторений
     private var completedReps = 0
 
     // Установка списка упражнений
     fun setExercises(exerciseList: List<Exercise>) {
-        // Сбрасываем флаг "текущего" для всех упражнений
         exerciseList.forEach { it.isCurrent = false }
 
-        // Устанавливаем первое упражнение как текущее
         if (exerciseList.isNotEmpty()) {
             exerciseList[0].isCurrent = true
             setCurrentExercise(exerciseList[0])
@@ -46,10 +47,9 @@ class ExerciseViewModel @Inject constructor(
         _exercises.value = exerciseList
     }
 
-
     // Установка текущего упражнения
     fun setCurrentExercise(exercise: Exercise) {
-        completedReps = 0 // Сбрасываем количество повторений при начале нового упражнения
+        completedReps = 0
         _currentExercise.value = exercise
     }
 
@@ -57,29 +57,45 @@ class ExerciseViewModel @Inject constructor(
         val exercises = _exercises.value ?: return
         val currentExercise = _currentExercise.value ?: return
 
-        // Найдем индекс текущего упражнения
         val currentIndex = exercises.indexOf(currentExercise)
 
-        // Убедимся, что это не последнее упражнение
         if (currentIndex != -1 && currentIndex < exercises.size - 1) {
-            // Снимаем флаг "текущее" с текущего упражнения
             currentExercise.isCurrent = false
 
-            // Устанавливаем следующее упражнение как текущее
             val nextExercise = exercises[currentIndex + 1]
             nextExercise.isCurrent = true
 
-            // Обновляем текущий список упражнений
             _exercises.value = exercises
-
-            // Устанавливаем новое текущее упражнение
             setCurrentExercise(nextExercise)
         } else {
-            // Все упражнения завершены
-            _workoutCompleted.value = true
+            completeWorkout()  // Все упражнения завершены
         }
     }
 
+    // Обработка завершения всей тренировки
+    private fun completeWorkout() {
+        _workoutCompleted.value = true
+
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            val userRef = firestore.collection("users").document(currentUser.uid)
+
+            // Получаем текущее значение дня и инкрементируем его
+            userRef.get().addOnSuccessListener { document ->
+                if (document.exists()) {
+                    val currentDay = document.getLong("currentDay") ?: 1
+                    val newDay = currentDay + 1
+
+                    // Обновляем currentDay в Firestore
+                    userRef.update("currentDay", newDay).addOnSuccessListener {
+                        Log.d("ExerciseViewModel", "currentDay успешно обновлен до $newDay")
+                    }.addOnFailureListener { e ->
+                        Log.e("ExerciseViewModel", "Ошибка обновления currentDay", e)
+                    }
+                }
+            }
+        }
+    }
 
     // Обработка данных с камеры
     fun processPose(pose: Pose) {
@@ -100,18 +116,15 @@ class ExerciseViewModel @Inject constructor(
                     currentExercise.isCompleted = true
                     _setCompleted.value = true
 
-                    // Переход к следующему упражнению
                     moveToNextExercise()
                 } else {
-                    _setCompleted.value = true // Подход завершен, но упражнение не закончено
+                    _setCompleted.value = true
                 }
 
                 _currentExercise.value = currentExercise
             }
-
         }
     }
-
 
     fun startNewSet() {
         completedReps = 0
@@ -121,8 +134,8 @@ class ExerciseViewModel @Inject constructor(
     fun resetSetCompletionFlag() {
         _setCompleted.value = false
     }
-
 }
+
 
 
 
