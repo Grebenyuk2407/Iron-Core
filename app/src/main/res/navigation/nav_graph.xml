@@ -13,7 +13,7 @@
             app:destination="@id/fragmentRegistration" />
         <action
             android:id="@+id/action_login_to_profile"
-            app:destination="@+id/nav_profile" />
+            app:destination="@id/nav_profile" />
     </fragment>
 
     <fragment
@@ -29,6 +29,9 @@
         android:id="@+id/workoutCompleteFragment"
         android:name="dev.androidbroadcast.ironcore.WorkoutCompleteFragment"
         android:label="WorkoutCompleteFragment" >
+        <action
+            android:id="@+id/action_workoutCompleteFragment_to_profileFragment"
+            app:destination="@id/nav_profile" />
     </fragment>
 
     <fragment
@@ -60,7 +63,7 @@
         android:label="Registration">
         <action
             android:id="@+id/action_registration_to_profile"
-            app:destination="@+id/nav_profile" />
+            app:destination="@id/nav_profile" />
     </fragment>
 
     <fragment
@@ -89,5 +92,8 @@
     <action
         android:id="@+id/action_global_to_profile"
         app:destination="@+id/nav_profile" />
+    <action
+        android:id="@+id/action_go_to_completeFragment"
+        app:destination="@id/workoutCompleteFragment" />
 </navigation>
 

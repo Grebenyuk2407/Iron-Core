@@ -56,6 +56,7 @@ class ExerciseFragment : Fragment() {
             if (isCompleted) {
                 Toast.makeText(context, "Тренировка завершена!", Toast.LENGTH_SHORT).show()
                 // Здесь можно переходить на экран завершения тренировки или выводить диалог
+                findNavController().navigate(R.id.action_go_to_completeFragment)
             }
         }
 
